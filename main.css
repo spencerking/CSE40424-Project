@@ -1,9 +1,23 @@
 #ipad {
    position: absolute;
-   top: 40%;
+   top: 37%;
    left: 45%;
    width: 600px;
    height: 700px;
    margin-top: -250px; /* Half the height */
    margin-left: -250px; /* Half the width */
+}
+
+/* This is a really bad way to do this */
+/* Should not have to guess at values, should be able to use nested divs */
+/* I don't remember as much HTML/CSS as I should */
+#main {
+   position: absolute;
+   top: 42%;
+   left: 49%;
+   width: 500px;
+   height: 600px;
+   margin-top: -250px; /* Half the height */
+   margin-left: -250px; /* Half the width */
+   background-color: lightblue;
 }
