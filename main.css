@@ -1,0 +1,9 @@
+#ipad {
+   position: absolute;
+   top: 40%;
+   left: 45%;
+   width: 600px;
+   height: 700px;
+   margin-top: -250px; /* Half the height */
+   margin-left: -250px; /* Half the width */
+}
