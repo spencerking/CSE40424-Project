@@ -18,7 +18,10 @@ function gestures(hammertime) {
 	hammertime.on('doubletap', function(ev) {
 		console.log('doubletap');
 	});
-
+	hammertime.on('press', function(ev) {
+		console.log('press');
+	});
+	
 	// hammertime.get('swipe').set({ direction: Hammer.DIRECTION_ALL });
 
 }
