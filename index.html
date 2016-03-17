@@ -3,6 +3,7 @@
 <html>
 
 	<head>
+		<script type="text/javascript" src="http://hammerjs.github.io/dist/hammer.min.js"></script>
 		<link rel="stylesheet" href="main.css">
 		<title>enjoyable textbooks</title>
 	</head>
@@ -11,10 +12,29 @@
 	<body>
 
 		<div id="main">
+		
+			<div id="ipad_background">
+			</div>
+
+			<div id="test">
+				<script>
+					var myElement = document.getElementById('test');
+					var myOptions = null;
+					var hammertime = new Hammer(myElement, myOptions);
+					hammertime.on('tap', function(ev) {
+		    			console.log('tap');
+					});
+					hammertime.get('swipe').set({ direction: Hammer.DIRECTION_ALL });
+					hammertime.on('swipe', function(ev) {
+						console.log('swipe');
+					});
+				</script>
+			</div>
+
+			<img id="ipad" src="images/ipad_transparency.png">
+	
 		</div>
 
-		<img id="ipad" src="images/ipad_transparency.png">
-	
 	</body>
 
 </html>

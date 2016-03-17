@@ -11,12 +11,34 @@
 /* This is a really bad way to do this */
 /* Should not have to guess at values, should be able to use nested divs */
 /* I don't remember as much HTML/CSS as I should */
-#main {
+#ipad_background {
    position: absolute;
    top: 42%;
    left: 49%;
    width: 500px;
    height: 600px;
+   margin-top: -250px; /* Half the height */
+   margin-left: -250px; /* Half the width */
+   background-color: lightblue;
+}
+
+/* This prevents the user from highlighting any part of the page */
+#main {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none;   /* Chrome/Safari/Opera */
+  -khtml-user-select: none;    /* Konqueror */
+  -moz-user-select: none;      /* Firefox */
+  -ms-user-select: none;       /* IE/Edge */
+  user-select: none;           /* non-prefixed version, currently
+                                  not supported by any browser */
+}
+
+#test {
+   position: absolute;
+   top: 90%;
+   left: 90%;
+   width: 300px;
+   height: 300px;
    margin-top: -250px; /* Half the height */
    margin-left: -250px; /* Half the width */
    background-color: lightblue;
