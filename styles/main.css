@@ -3,22 +3,21 @@
    top: 37%;
    left: 45%;
    width: 600px;
-   height: 700px;
+   height: 770px;
    margin-top: -250px; /* Half the height */
    margin-left: -250px; /* Half the width */
+   background-image: url('../images/ipad_transparency.png');
+   background-size: 100% auto;
 }
 
-/* This is a really bad way to do this */
-/* Should not have to guess at values, should be able to use nested divs */
-/* I don't remember as much HTML/CSS as I should */
+
+/* this nested in the ipad and values based on the size of the ipad image */
 #ipad_background {
    position: absolute;
-   top: 42%;
-   left: 49%;
-   width: 500px;
-   height: 600px;
-   margin-top: -250px; /* Half the height */
-   margin-left: -250px; /* Half the width */
+   top: 10%;
+   left: 11.65%;
+   width: 77.35%;
+   height: 80.35%;
    background-color: lightblue;
 }
 
