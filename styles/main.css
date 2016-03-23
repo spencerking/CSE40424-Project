@@ -21,6 +21,37 @@
    background-color: lightblue;
 }
 
+#header_bar {
+  background-color:#F0F0FF;
+  height:10%;
+  width:100%;
+}
+
+#bookmarks_bar {
+  background-color:#F0F0FF;
+  position: absolute;
+  bottom: 0;
+  height: 5%;
+  width: 100%;
+}
+
+/* These have color for now just to visualize how big they are */
+#right_bar {
+  background-color:#F0F0FF;
+  position: absolute;
+  right: 0;
+  height: 90%;
+  width: 5%;
+}
+
+#left_bar {
+  background-color:#F0F0FF;
+  position: absolute;
+  left: 0;
+  height: 90%;
+  width: 5%;
+}
+
 /* This prevents the user from highlighting any part of the page */
 #main {
   -webkit-touch-callout: none; /* iOS Safari */

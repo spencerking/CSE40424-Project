@@ -18,9 +18,13 @@
 			<div id="ipad">
 				<!-- This is where the app will live -->
 				<div id="ipad_background">
-					<div id="header_bar" style="background-color:#F0F0FF;height:10%;width:100%;">
+					<div id="header_bar">
 					</div>
-					<div>
+					<div id="bookmarks_bar">
+					</div>
+					<div id="right_bar">
+					</div>
+					<div id="left_bar">
 					</div>
 
 				</div>
@@ -40,7 +44,14 @@
 		var myElement = document.getElementById('test');
 		var myOptions = null;
 		var hammertime = new Hammer(myElement, myOptions);
-		gestures(hammertime);
+
+		var rightElement = document.getElementById('right_bar');
+		var rightHammer = new Hammer(rightElement, myOptions);
+
+		var leftElement = document.getElementById('left_bar');
+		var leftHammer = new Hammer(leftElement, myOptions);
+
+		gestures(hammertime, rightHammer, leftHammer);
 	</script>
 
 </html>

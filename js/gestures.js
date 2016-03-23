@@ -1,4 +1,4 @@
-function gestures(hammertime) {
+function gestures(hammertime, rightHammer, leftHammer) {
 
 	hammertime.on('tap', function(ev) {
 		console.log('tap');
@@ -22,5 +22,15 @@ function gestures(hammertime) {
 	});
 
 	// hammertime.get('swipe').set({ direction: Hammer.DIRECTION_ALL });
+
+	rightHammer.on('swipeleft', function(ev) {
+		console.log('advance page');
+		document.getElementById('ipad_background').style.backgroundColor = "red";
+	});
+
+	leftHammer.on('swiperight', function(ev) {
+		console.log('move back page');
+		document.getElementById('ipad_background').style.backgroundColor = "green";
+	});
 
 }
