@@ -10,7 +10,6 @@
    background-size: 100% auto;
 }
 
-
 /* this nested in the ipad and values based on the size of the ipad image */
 #ipad_background {
    position: absolute;
@@ -19,6 +18,12 @@
    width: 77.5%;
    height: 80.8%;
    background-color: lightblue;
+}
+
+#main_page {
+  display: none; /* Completely hides from view, does not occupy space on the page */
+                 /* visibility: hidden also hides from view but it still occupies vertical and horizontal space */
+
 }
 
 #header_bar {
@@ -40,7 +45,7 @@
   background-color:#F0F0FF;
   position: absolute;
   right: 0;
-  height: 90%;
+  height: 85%;
   width: 5%;
 }
 
@@ -48,7 +53,7 @@
   background-color:#F0F0FF;
   position: absolute;
   left: 0;
-  height: 90%;
+  height: 85%;
   width: 5%;
 }
 

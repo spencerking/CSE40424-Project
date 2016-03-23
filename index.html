@@ -18,6 +18,8 @@
 			<div id="ipad">
 				<!-- This is where the app will live -->
 				<div id="ipad_background">
+					<div id="main_page">
+					</div>
 					<div id="header_bar">
 					</div>
 					<div id="bookmarks_bar">
@@ -29,29 +31,20 @@
 
 				</div>
 			</div>
-
-			<!-- Testing Hammer.js -->
-			<div id="test">
-			</div>
-			
-
 		</div>
 
 	</body>
 
 	<!-- Define js variables -->
 	<script>
-		var myElement = document.getElementById('test');
-		var myOptions = null;
-		var hammertime = new Hammer(myElement, myOptions);
-
 		var rightElement = document.getElementById('right_bar');
+		var myOptions = null;
 		var rightHammer = new Hammer(rightElement, myOptions);
 
 		var leftElement = document.getElementById('left_bar');
 		var leftHammer = new Hammer(leftElement, myOptions);
 
-		gestures(hammertime, rightHammer, leftHammer);
+		gestures(rightHammer, leftHammer);
 	</script>
 
 </html>
