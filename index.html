@@ -19,6 +19,10 @@
 				<!-- This is where the app will live -->
 				<div id="ipad_background">
 					<div id="main_page">
+						<p id="book">Book</p>
+						<p>Book 2</p>
+						<p>Book 3</p>
+						<p>Book 4</p>
 					</div>
 					<div id="header_bar">
 					</div>
@@ -44,7 +48,10 @@
 		var leftElement = document.getElementById('left_bar');
 		var leftHammer = new Hammer(leftElement, myOptions);
 
-		gestures(rightHammer, leftHammer);
+		var bookElement = document.getElementById('book'); // Might not need to worry about generalizing this
+		var bookHammer = new Hammer(bookElement, myOptions);
+
+		gestures(rightHammer, leftHammer, bookHammer);
 	</script>
 
 </html>

@@ -1,4 +1,4 @@
-function gestures(rightHammer, leftHammer) {
+function gestures(rightHammer, leftHammer, bookHammer) {
 
 	// Old test code, kept for now for basic examples
 	// hammertime.on('tap', function(ev) {
@@ -34,4 +34,11 @@ function gestures(rightHammer, leftHammer) {
 		document.getElementById('ipad_background').style.backgroundColor = "green";
 	});
 
+	bookHammer.on('tap', function(ev) {
+		console.log('open Book');
+		document.getElementById('main_page').style.visibility = "hidden";
+		document.getElementById('bookmarks_bar').style.visibility = "visible";
+		document.getElementById('right_bar').style.visibility = "visible";
+		document.getElementById('left_bar').style.visibility = "visible";
+	});
 }
