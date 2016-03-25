@@ -37,6 +37,7 @@ function gestures(rightHammer, leftHammer, bookHammer) {
 	bookHammer.on('tap', function(ev) {
 		console.log('open Book');
 		document.getElementById('main_page').style.visibility = "hidden";
+		// document.getElementById('book_page').style.visibility = "visible";
 		document.getElementById('bookmarks_bar').style.visibility = "visible";
 		document.getElementById('right_bar').style.visibility = "visible";
 		document.getElementById('left_bar').style.visibility = "visible";

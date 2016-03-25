@@ -21,8 +21,7 @@
 }
 
 #main_page {
-  visibility: visible; /* Completely hides from view, does not occupy space on the page */
-                 /* visibility: hidden also hides from view but it still occupies vertical and horizontal space */
+  visibility: visible;
   position: absolute;
   bottom: 0; 
 }
@@ -59,6 +58,13 @@
   left: 0;
   height: 85%;
   width: 5%;
+}
+
+#book_page {
+  visibility: hidden;
+  position: absolute;
+  width: 90%;
+  height: 85%;
 }
 
 /* This prevents the user from highlighting any part of the page */
