@@ -32,6 +32,19 @@
   width:100%;
 }
 
+#book_title {
+  display: none;
+  text-align: center;
+}
+
+#home_button {
+  text-align: left;
+}
+
+#settings_button {
+  text-align: right;
+}
+
 #bookmarks_bar {
   visibility: hidden;
   background-color:#F0F0FF;
