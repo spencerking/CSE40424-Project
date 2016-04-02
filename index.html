@@ -18,31 +18,51 @@
 			<div id="ipad">
 				<!-- This is where the app will live -->
 				<div id="ipad_background">
-					<div id="main_page">
-						<p id="book">Book</p>
-						<p>Book 2</p>
-						<p>Book 3</p>
-						<p>Book 4</p>
-					</div>
+
+					<!-- header_bar is always visible, allows navigation between books -->
 					<div id="header_bar">
 						<p id="home_button">Home</p>
-						<p id="book_title">Book</p>
-						<p id="search_button">Search</p>
 						<p id="settings_button">Settings</p>
+						<p id="book_title">Sample Title</p>
+						<!--<p id="search_button">Search</p>-->
 					</div>
+
+					<!-- main_page is home screen of the app, where book options reside -->
+					<div id="main_page">
+						<div id="book0">
+							<img id="book_img" src="images/book.png"/>
+						</div>
+						<div id="book1">
+							<p>Book 2</p>
+						</div>
+						<div id="book2">
+							<p>Book 3</p>
+						</div>
+						<div id="book3">
+							<!-- book3 will actually be the "add book" option -->
+							<p>Book 4</p>
+						</div>
+					</div>
+					
+					<!-- bookmarks_bar displayed at bottom of screen can epand when swiped upwards -->
 					<div id="bookmarks_bar">
 						Bookmark 1
 						Bookmark 2
 						Bookmark 3
 						Bookmark 4
 					</div>
+					
+					<!-- right/left_bars will have no content, just have gesture response -->
 					<div id="right_bar">
 					</div>
 					<div id="left_bar">
 					</div>
+
+					<!-- book_page has contents of book, replaced as traverse pages -->
 					<div id="book_page">
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 					</div>
+					
 					<div id="search_page">
 					</div>
 					<div id="settings_page">
@@ -62,7 +82,7 @@
 		var leftElement = document.getElementById('left_bar');
 		var leftHammer = new Hammer(leftElement, myOptions);
 
-		var bookElement = document.getElementById('book'); // Might not need to worry about generalizing this for the prototype
+		var bookElement = document.getElementById('book_img'); // Might not need to worry about generalizing this for the prototype
 		var bookHammer = new Hammer(bookElement, myOptions);
 
 		gestures(rightHammer, leftHammer, bookHammer);
