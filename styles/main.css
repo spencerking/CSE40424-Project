@@ -106,7 +106,7 @@
 /* These have color for now just to visualize how big they are */
 #right_bar {
   visibility: hidden;
-  background-color:#F0F0FF;
+  background-image: url('../images/book_pages.jpg');
   position: absolute;
   right: 0;
   top: 10%;
