@@ -41,6 +41,6 @@ function gestures(rightHammer, leftHammer, bookHammer) {
 		document.getElementById('bookmarks_bar').style.visibility = "visible";
 		document.getElementById('right_bar').style.visibility = "visible";
 		document.getElementById('left_bar').style.visibility = "visible";
-		document.getElementById('book_title').style.display = "block";
+		document.getElementById('header_title').innerHTML = "Sample Book";
 	});
 }

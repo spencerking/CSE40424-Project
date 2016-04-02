@@ -14,7 +14,6 @@
 
 		<div id="main">
 		
-
 			<div id="ipad">
 				<!-- This is where the app will live -->
 				<div id="ipad_background">
@@ -23,24 +22,24 @@
 					<div id="header_bar">
 						<p id="home_button">Home</p>
 						<p id="settings_button">Settings</p>
-						<p id="book_title">Sample Title</p>
+						<p id="header_title">e(njoyable)Textbooks</p>
 						<!--<p id="search_button">Search</p>-->
 					</div>
 
 					<!-- main_page is home screen of the app, where book options reside -->
 					<div id="main_page">
 						<div id="book0">
-							<img id="book_img" src="images/book.png"/>
+							<img class="book_img" src="images/book.png"/>
 						</div>
-						<div id="book1">
-							<p>Book 2</p>
+ 						<div id="book1">
+							<img class="book_img" src="images/book.png"/>
 						</div>
 						<div id="book2">
-							<p>Book 3</p>
+							<img class="book_img" src="images/book.png"/>
 						</div>
 						<div id="book3">
 							<!-- book3 will actually be the "add book" option -->
-							<p>Book 4</p>
+							<p id="add_book_button">+ (Add New Book) +</p>
 						</div>
 					</div>
 					
@@ -82,8 +81,8 @@
 		var leftElement = document.getElementById('left_bar');
 		var leftHammer = new Hammer(leftElement, myOptions);
 
-		var bookElement = document.getElementById('book_img'); // Might not need to worry about generalizing this for the prototype
-		var bookHammer = new Hammer(bookElement, myOptions);
+		var bookElements = document.getElementsByClassName('book_img'); // Might not need to worry about generalizing this for the prototype
+		var bookHammer = new Hammer(bookElements[0], myOptions);
 
 		gestures(rightHammer, leftHammer, bookHammer);
 	</script>

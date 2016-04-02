@@ -24,6 +24,8 @@
   visibility: visible;
   position: absolute;
   bottom: 0; 
+  height:90%;
+  width:100%;
 }
 
 #header_bar {
@@ -32,8 +34,47 @@
   width:100%;
 }
 
-#book_title {
-  display: none;
+.book_img {
+	width: 100px;
+	height: auto;	
+	display: block;
+	margin: auto;
+	margin-top: 40px;
+}
+
+#add_book_button{
+	margin: auto;
+	margin-top: 40px;
+	text-align: center;
+}
+
+#book0 {
+	height: 50%;
+	width: 50%;
+	float: left;
+	overflow: hidden;
+}
+#book1 {
+	height: 50%;
+	width: 50%;
+	float: right;
+	overflow: hidden;
+}
+#book2 {
+	height: 50%;
+	width: 50%;
+	overflow: hidden;
+	float: left;
+}
+#book3{
+	height: 50%;
+	width: 50%;
+	overflow: hidden;
+	float: right;	
+}
+
+#header_title {
+  display: block;
   text-align: center;
 }
 
