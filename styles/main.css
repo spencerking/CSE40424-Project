@@ -47,19 +47,19 @@
 
 }
 
-.bookmark1 {
+#bookmark1 {
   visibility: hidden;
 }
 
-.bookmark2 {
+#bookmark2 {
   visibility: hidden;
 }
 
-.bookmark3 {
+#bookmark3 {
   visibility: hidden;
 }
 
-.bookmark4 {
+#bookmark4 {
   visibility: hidden;
 }
 
@@ -152,7 +152,7 @@
 }
  
 #bookmarks_bar {
-  visibility: hidden;
+  opacity: 0;
   background-color:#F0F0FF;
   position: absolute;
   left: 0;
@@ -186,10 +186,19 @@
 #book_page {
   visibility: hidden;
   position: absolute;
-  left: 7%;
-  width: 86%;
-  height: 81%;
-  bottom: 7%;
+  left: 5%;
+  width: 90%;
+  height: 90%;
+  bottom: 0;
+}
+
+#book_content {
+	margin: 10px;
+}
+
+#page_number {
+	float: bottom;
+	text-align: center;
 }
 
 /* This prevents the user from highlighting any part of the page */

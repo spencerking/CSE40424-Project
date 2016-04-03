@@ -75,6 +75,12 @@ function advance_page() {
 	// add a check against max pages
 	console.log('advance page');
 	curr_page++;
+	document.getElementById('page_number').innerHTML = curr_page;
+	if (bookmarks_arr[curr_page-1] == 1) {
+		bookmark_on(1);
+	} else {
+		bookmark_on(0);
+	}
 	console.log('curr_page is ' + curr_page);
 	// document.getElementById('book_page').style.backgroundColor = "red";
 }
@@ -83,6 +89,12 @@ function back_a_page() {
 	// make sure don't go below 1 page
 	console.log('move back page');
 	curr_page--;
+	document.getElementById('page_number').innerHTML = curr_page;
+	if (bookmarks_arr[curr_page-1] == 1) {
+		bookmark_on(1);
+	} else {
+		bookmark_on(0);
+	}
 	console.log('curr_page is ' + curr_page);
 	// document.getElementById('book_page').style.backgroundColor = "green";	
 }
@@ -90,12 +102,18 @@ function back_a_page() {
 function open_book() {
 	console.log('open Book');
 	curr_page = 1; // We will need to remember a book's current page at some point
+	if (bookmarks_arr[curr_page-1] == 1) {
+		bookmark_on(1);
+	} else {
+		bookmark_on(0);
+	}
 	document.getElementById('main_page').style.visibility = "hidden";
 	document.getElementById('book_page').style.visibility = "visible";
 	document.getElementById('right_bar').style.visibility = "visible";
 	document.getElementById('left_bar').style.visibility = "visible";
-	document.getElementById('bookmarks_bar').style.visibility = "visible";
+	document.getElementById('bookmarks_bar').style.opacity = "1";
 	document.getElementById('header_title').innerHTML = "Sample Book";
+	document.getElementById('page_number').innerHTML = curr_page;
 }
 
 function go_to_home() {
@@ -104,7 +122,7 @@ function go_to_home() {
 	// NOTE: later will probably have to add more to remove settings if open, etc
 	document.getElementById('main_page').style.visibility = "visible";
 	document.getElementById('book_page').style.visibility = "hidden";
-	document.getElementById('bookmarks_bar').style.visibility = "hidden";
+	document.getElementById('bookmarks_bar').style.opacity = "0";
 	document.getElementById('right_bar').style.visibility = "hidden";
 	document.getElementById('left_bar').style.visibility = "hidden";
 	document.getElementById('header_title').innerHTML = "e(njoyable)Textbooks";
@@ -131,18 +149,28 @@ function contract_bookmarks_bar() {
 
 
 function toggle_mark() {
-	if (bookmarks_arr[curr_page] == 0) {
+	if (bookmarks_arr[curr_page-1] == 0) {
 		console.log('marking a page');
-		document.getElementById('bookmark').style.background = 'url(images/bookmark_full.png) no-repeat';
+		bookmarks_arr[curr_page-1] = 1;
+		bookmark_on(1);
+	}
+	else if (bookmarks_arr[curr_page-1] == 1) {
+		console.log('unmarking a page');
+		bookmarks_arr[curr_page-1] = 0;
+		bookmark_on(0);
+	}
+}
+
+// changes css to turn bookmark on if yes == 1 or off if yes == 0
+function bookmark_on(yes) {
+	if (yes) {
+		document.getElementById('bookmark').src = 'images/bookmark_full.png';
 		var str = "bookmark" + curr_page;
 		document.getElementById(str).style.visibility = "visible";
-		bookmarks_arr[curr_page] = 1;
 	}
-	else if (bookmarks_arr[curr_page] == 1) {
-		console.log('unmarking a page');
-		document.getElementById('bookmark').style.background = 'url(images/bookmark.png) no-repeat';
+	else {
+		document.getElementById('bookmark').src = 'images/bookmark.png';
 		var str = "bookmark" + curr_page;
 		document.getElementById(str).style.visibility = "hidden";
-		bookmarks_arr[curr_page] = 0;
 	}
 }
