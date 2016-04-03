@@ -79,6 +79,7 @@ function advance_page() {
 	else {
 		curr_page++;
 		document.getElementById('page_number').innerHTML = curr_page;
+		document.getElementById('page_variance').innerHTML = 'This is page ' + curr_page + '.';
 		if (bookmarks_arr[curr_page-1] == 1) {
 			bookmark_on(1);
 		} else {
@@ -97,6 +98,7 @@ function back_a_page() {
 	else {
 		curr_page--;
 		document.getElementById('page_number').innerHTML = curr_page;
+		document.getElementById('page_variance').innerHTML = 'This is page ' + curr_page + '.';
 		if (bookmarks_arr[curr_page-1] == 1) {
 			bookmark_on(1);
 		} else {
@@ -113,6 +115,8 @@ function open_book() {
 	} else {
 		bookmark_on(0);
 	}
+	document.getElementById('page_variance').innerHTML = 'This is page ' + curr_page + '.';
+
 	document.getElementById('main_page').style.visibility = "hidden";
 	document.getElementById('book_page').style.visibility = "visible";
 	document.getElementById('right_bar').style.visibility = "visible";
