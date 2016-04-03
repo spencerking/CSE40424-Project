@@ -15,28 +15,6 @@ var bookmarks_arr = makeArrayOf(0, max_pages); // [0, 0, 0, 0]
 
 function gestures() {
 
-	// Old test code, kept for now for basic examples
-	// hammertime.on('tap', function(ev) {
-	// 	console.log('tap');
-	// });
-	// hammertime.on('swipe', function(ev) {
-	// 	console.log('swipe');
-	// });
-	// hammertime.on('swipeleft', function(ev) {
-	// 	console.log('swipeleft');
-	// 	document.getElementById('test').style.backgroundColor = "red";
-	// });
-	// hammertime.on('swiperight', function(ev) {
-	// 	console.log('swiperight');
-	// 	document.getElementById('test').style.backgroundColor = "green";
-	// });
-	// hammertime.on('doubletap', function(ev) {
-	// 	console.log('doubletap');
-	// });
-	// hammertime.on('press', function(ev) {
-	// 	console.log('press');
-	// });
-
 	var myOptions = null;
 
 	// swipe to advance to the net page
@@ -69,6 +47,17 @@ function gestures() {
 	// tap the bookmark icon
 	var markHammer = new Hammer(document.getElementById('bookmark'), myOptions);
 	markHammer.on('tap', function(ev) {toggle_mark(); });
+
+	// tap a bookmark preview
+	//getElementsByClass doesn't agree with Hammer.js
+	var markPreview1Hammer = new Hammer(document.getElementById('bookmark1'), myOptions);
+	markPreview1Hammer.on('tap', function(ev) {tap_bookmark_preview(1); });
+	var markPreview2Hammer = new Hammer(document.getElementById('bookmark2'), myOptions);
+	markPreview2Hammer.on('tap', function(ev) {tap_bookmark_preview(2); });
+	var markPreview3Hammer = new Hammer(document.getElementById('bookmark3'), myOptions);
+	markPreview3Hammer.on('tap', function(ev) {tap_bookmark_preview(3); });
+	var markPreview4Hammer = new Hammer(document.getElementById('bookmark4'), myOptions);
+	markPreview4Hammer.on('tap', function(ev) {tap_bookmark_preview(4); });
 }
 
 function advance_page() {
@@ -181,6 +170,7 @@ function contract_bookmark_previews() {
 }
 
 function toggle_mark() {
+	contract_bookmarks_bar();
 	if (bookmarks_arr[curr_page-1] == 0) {
 		console.log('marking a page');
 		bookmarks_arr[curr_page-1] = 1;
@@ -205,4 +195,10 @@ function bookmark_on(yes) {
 		var str = "bookmark" + curr_page;
 		document.getElementById(str).style.visibility = "hidden";
 	}
+}
+
+function tap_bookmark_preview(page_num) {
+	console.log('preview tapped');
+	curr_page = page_num;
+	document.getElementById('page_number').innerHTML = curr_page;
 }
