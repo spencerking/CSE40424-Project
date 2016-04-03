@@ -1,4 +1,17 @@
 var curr_page = 1;
+var max_pages = 4;
+
+// http://stackoverflow.com/questions/1295584/most-efficient-way-to-create-a-zero-filled-javascript-array
+function makeArrayOf(value, length) {
+  var arr = [], i = length;
+  while (i--) {
+    arr[i] = value;
+  }
+  return arr;
+}
+
+var bookmarks_arr = makeArrayOf(0, max_pages); // [0, 0, 0, 0]
+
 
 function gestures() {
 
@@ -62,13 +75,15 @@ function advance_page() {
 	// add a check against max pages
 	console.log('advance page');
 	curr_page++;
+	console.log('curr_page is ' + curr_page);
 	// document.getElementById('book_page').style.backgroundColor = "red";
 }
 
 function back_a_page() {
 	// make sure don't go below 1 page
 	console.log('move back page');
-	curr_page++;
+	curr_page--;
+	console.log('curr_page is ' + curr_page);
 	// document.getElementById('book_page').style.backgroundColor = "green";	
 }
 
@@ -114,21 +129,20 @@ function contract_bookmarks_bar() {
 	}
 }
 
-var marked = 0;
 
 function toggle_mark() {
-	if (marked == 0) {
+	if (bookmarks_arr[curr_page] == 0) {
 		console.log('marking a page');
 		document.getElementById('bookmark').style.background = 'url(images/bookmark_full.png) no-repeat';
 		var str = "bookmark" + curr_page;
 		document.getElementById(str).style.visibility = "visible";
-		marked = 1;
+		bookmarks_arr[curr_page] = 1;
 	}
-	else if (marked == 1) {
+	else if (bookmarks_arr[curr_page] == 1) {
 		console.log('unmarking a page');
 		document.getElementById('bookmark').style.background = 'url(images/bookmark.png) no-repeat';
 		var str = "bookmark" + curr_page;
 		document.getElementById(str).style.visibility = "hidden";
-		marked = 0;
+		bookmarks_arr[curr_page] = 0;
 	}
 }
