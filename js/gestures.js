@@ -72,31 +72,38 @@ function gestures() {
 }
 
 function advance_page() {
-	// add a check against max pages
 	console.log('advance page');
-	curr_page++;
-	document.getElementById('page_number').innerHTML = curr_page;
-	if (bookmarks_arr[curr_page-1] == 1) {
-		bookmark_on(1);
-	} else {
-		bookmark_on(0);
+	if (curr_page+1 > max_pages) {
+		console.log('page cannot be greater than max');
 	}
-	console.log('curr_page is ' + curr_page);
-	// document.getElementById('book_page').style.backgroundColor = "red";
+	else {
+		curr_page++;
+		document.getElementById('page_number').innerHTML = curr_page;
+		if (bookmarks_arr[curr_page-1] == 1) {
+			bookmark_on(1);
+		} else {
+			bookmark_on(0);
+		}
+		console.log('curr_page is ' + curr_page);
+	}
 }
 
 function back_a_page() {
-	// make sure don't go below 1 page
 	console.log('move back page');
-	curr_page--;
-	document.getElementById('page_number').innerHTML = curr_page;
-	if (bookmarks_arr[curr_page-1] == 1) {
-		bookmark_on(1);
-	} else {
-		bookmark_on(0);
+	
+	if (curr_page-1 < 1) {
+		console.log('page must be above 1');
 	}
-	console.log('curr_page is ' + curr_page);
-	// document.getElementById('book_page').style.backgroundColor = "green";	
+	else {
+		curr_page--;
+		document.getElementById('page_number').innerHTML = curr_page;
+		if (bookmarks_arr[curr_page-1] == 1) {
+			bookmark_on(1);
+		} else {
+			bookmark_on(0);
+		}
+		console.log('curr_page is ' + curr_page);
+	}	
 }
 
 function open_book() {
