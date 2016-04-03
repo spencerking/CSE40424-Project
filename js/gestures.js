@@ -1,3 +1,5 @@
+var curr_page = 1;
+
 function gestures() {
 
 	// Old test code, kept for now for basic examples
@@ -50,20 +52,29 @@ function gestures() {
 	bookmarksHammer.get('swipe').set({ direction: Hammer.DIRECTION_VERTICAL });
 	bookmarksHammer.on('swipeup', function(ev) { expand_bookmarks_bar(); });
 	bookmarksHammer.on('swipedown', function(ev) { contract_bookmarks_bar(); });
+
+	// tap the bookmark icon
+	var markHammer = new Hammer(document.getElementById('bookmark'), myOptions);
+	markHammer.on('tap', function(ev) {toggle_mark(); });
 }
 
 function advance_page() {
+	// add a check against max pages
 	console.log('advance page');
-	document.getElementById('book_page').style.backgroundColor = "red";
+	curr_page++;
+	// document.getElementById('book_page').style.backgroundColor = "red";
 }
 
 function back_a_page() {
+	// make sure don't go below 1 page
 	console.log('move back page');
-	document.getElementById('book_page').style.backgroundColor = "green";	
+	curr_page++;
+	// document.getElementById('book_page').style.backgroundColor = "green";	
 }
 
 function open_book() {
 	console.log('open Book');
+	curr_page = 1; // We will need to remember a book's current page at some point
 	document.getElementById('main_page').style.visibility = "hidden";
 	document.getElementById('book_page').style.visibility = "visible";
 	document.getElementById('right_bar').style.visibility = "visible";
@@ -100,5 +111,24 @@ function contract_bookmarks_bar() {
 		console.log('contracting bookmarks bar back to small size');
 		$('#bookmarks_bar').animate({height: '-=10%'}, 300);
 		bookmark_bar_expanded = 0;
+	}
+}
+
+var marked = 0;
+
+function toggle_mark() {
+	if (marked == 0) {
+		console.log('marking a page');
+		document.getElementById('bookmark').style.background = 'url(images/bookmark_full.png) no-repeat';
+		var str = "bookmark" + curr_page;
+		document.getElementById(str).style.visibility = "visible";
+		marked = 1;
+	}
+	else if (marked == 1) {
+		console.log('unmarking a page');
+		document.getElementById('bookmark').style.background = 'url(images/bookmark.png) no-repeat';
+		var str = "bookmark" + curr_page;
+		document.getElementById(str).style.visibility = "hidden";
+		marked = 0;
 	}
 }

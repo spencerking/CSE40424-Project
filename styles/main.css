@@ -34,6 +34,35 @@
   width:100%;
 }
 
+.icons {
+  max-width: 500px;
+  height: 100px;
+}
+
+.bookmarks {
+
+}
+
+#bookmark {
+
+}
+
+.bookmark1 {
+  visibility: hidden;
+}
+
+.bookmark2 {
+  visibility: hidden;
+}
+
+.bookmark3 {
+  visibility: hidden;
+}
+
+.bookmark4 {
+  visibility: hidden;
+}
+
 .book_img {
 	width: 100px;
 	height: auto;	
