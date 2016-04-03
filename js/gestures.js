@@ -126,6 +126,11 @@ function open_book() {
 	document.getElementById('bookmarks_bar').style.opacity = "1";
 	document.getElementById('header_title').innerHTML = "Sample Book";
 	document.getElementById('page_number').innerHTML = curr_page;
+	var icons = document.getElementsByClassName('icons');
+	for (var i=0; i < icons.length; i++) {
+		icons[i].style.visibility = "visible";
+	}
+	document.getElementById('search_field').style.visibility = "visible";
 }
 
 function go_to_home() {
@@ -139,6 +144,11 @@ function go_to_home() {
 	document.getElementById('left_bar').style.visibility = "hidden";
 	document.getElementById('settings_page').style.visibility = "hidden";
 	document.getElementById('header_title').innerHTML = "e(njoyable)Textbooks";
+	var icons = document.getElementsByClassName('icons');
+	for (var i=0; i < icons.length; i++) {
+		icons[i].style.visibility = "hidden";
+	}
+	document.getElementById('search_field').style.visibility = "hidden";
 }
 
 var bookmark_bar_expanded = 0;
@@ -160,7 +170,10 @@ function expand_bookmark_previews() {
 		if (bookmarks_arr[i] == 1) {
 			var j = i + 1;
 			var str = 'bookmark' + j;
+			// use y for percentage from left for the bookmark
+			var y = i*10+15;
 			document.getElementById(str).style.width = "50px";
+			document.getElementById(str).style.left = y + '%';
 		}
 		i++;
 	}
@@ -170,6 +183,7 @@ function contract_bookmarks_bar() {
 	if (bookmark_bar_expanded == 1) {
 		console.log('contracting bookmarks bar back to small size');
 		$('#bookmarks_bar').animate({height: '-=10%'}, 300);
+		contract_bookmark_previews();
 		bookmark_bar_expanded = 0;
 	}
 }
@@ -181,18 +195,24 @@ function contract_bookmark_previews() {
 		if (bookmarks_arr[i] == 1) {
 			var j = i + 1;
 			var str = 'bookmark' + j;
+			var y = i*20+10;
 			document.getElementById(str).style.width = "20px";
+			document.getElementById(str).style.left = y + '%';
+
 		}
 		i++;
 	}
 }
 
 function toggle_mark() {
-	contract_bookmarks_bar();
+	//contract_bookmarks_bar();
 	if (bookmarks_arr[curr_page-1] == 0) {
 		console.log('marking a page');
 		bookmarks_arr[curr_page-1] = 1;
 		bookmark_on(1);
+		if (bookmark_bar_expanded == 1){
+			expand_bookmark_previews();
+		}
 	}
 	else if (bookmarks_arr[curr_page-1] == 1) {
 		console.log('unmarking a page');
@@ -248,6 +268,11 @@ function toggle_settings() {
 		document.getElementById('left_bar').style.visibility = "hidden";
 		document.getElementById('bookmarks_bar').style.visibility = "hidden";
 		document.getElementById('settings_page').style.visibility = "visible";
+		var icons = document.getElementsByClassName('icons');
+		for (var i=0; i < icons.length; i++) {
+			icons[i].style.visibility = "hidden";
+		}
+		document.getElementById('search_field').style.visibility = "hidden";
 	}
 	else if (settings == 1) {
 		// return to previous page, either book or home screen
