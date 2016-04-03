@@ -40,6 +40,7 @@
 	display: block;
 	margin: auto;
 	margin-top: 40px;
+	
 }
 
 #book0 {
@@ -68,7 +69,6 @@
 }
 
 #header_title {
-  display: block;
   text-align: center;
 }
 
@@ -76,16 +76,41 @@
   text-align: left;
   display: inline;
   float: left, top;
-  margin: 0;
+  margin: 10px;
+  width: 40px;
+  height: auto;
 }
 
 #settings_button {
   text-align: right;
   display:inline;
   float: right;
-  margin: 0;
+  margin: 10px;
+  width: 40px;
+  height: auto;
  }
 
+#home_button_div {
+	width: 33%;
+	height: 100%;
+	float: left;
+	overflow: hidden;
+}
+
+#header_title_div {
+	width: 34%;
+	height: 100%;
+	overflow: hidden;
+	display: inline-block;
+	}
+ 
+#settings_button_div {
+	width: 33%;
+	height: 100%;
+	float: right;
+	overflow: hidden;
+}
+ 
 #bookmarks_bar {
   visibility: hidden;
   background-color:#F0F0FF;
