@@ -252,6 +252,7 @@
 
 #settings_page {
   visibility: hidden;
+  font-family: "Verdana", sans-serif;
 }
 
 #book_page {

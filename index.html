@@ -95,7 +95,16 @@
 					<div id="search_page">
 					</div>
 					<div id="settings_page">
-						Settings
+						<label for="tab-mode"> Tab Mode: </label>
+						 <input type="checkbox" name="tab-mode" value="tab-mode" id="tab-mode">
+						 <br>
+						<label for="font-size">Font size:</label>
+						<input type="range" data-popup-enabled="true" name="font-size" id="font-slider" value="12" min="0" max="36">
+						<br>
+						<label for="contrast">Contrast:</label>
+						<input type="range" data-popup-enabled="true" name="contrast" id="contrast-slider" value="50" min="0" max="100">
+						<br>
+						<input type="submit" value="Save">
 					</div>
 				</div>
 			</div>
