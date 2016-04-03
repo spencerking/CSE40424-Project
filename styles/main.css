@@ -41,6 +41,10 @@
   margin-bottom: -40px;
 }
 
+#search {
+	float: right;
+}
+
 .bookmarks_on_bar {
 
 }
@@ -197,7 +201,6 @@
 
 #left_bar {
   visibility: hidden;
-  background-color:blue;
   position: absolute;
   left: 0;
   top: 10%;
@@ -215,7 +218,8 @@
 }
 
 #book_content {
-	margin: 10px;
+  margin: 10px;
+  margin-top: 16px;
   font-family: "Verdana", sans-serif;
 }
 
