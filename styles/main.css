@@ -39,8 +39,20 @@
   height: 100px;
 }
 
-.bookmarks {
+.bookmarks_on_bar {
 
+}
+
+.book_content_on_bar {
+  margin: 10px;
+  font-family: "Verdana", sans-serif;
+  font-size: 8px;
+  display: inline-block;
+}
+
+.bookmark_preview {
+  width: auto;
+  height: auto;
 }
 
 #bookmark {
@@ -49,6 +61,13 @@
 
 #bookmark1 {
   visibility: hidden;
+  position: relative;
+  top: 10%;
+  left: 10%;
+  max-width: 20px;
+  height: 100%;
+  background: url('../images/bookmark_preview.png') no-repeat;
+  background-size:contain;
 }
 
 #bookmark2 {
@@ -110,6 +129,7 @@
 
 #header_title {
   text-align: center;
+  font-family: "Verdana", sans-serif;
 }
 
 #home_button {
@@ -194,11 +214,13 @@
 
 #book_content {
 	margin: 10px;
+  font-family: "Verdana", sans-serif;
 }
 
 #page_number {
 	float: bottom;
 	text-align: center;
+  font-family: "Georgia", serif;
 }
 
 /* This prevents the user from highlighting any part of the page */
