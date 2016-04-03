@@ -80,17 +80,7 @@
 
 	<!-- Define js variables -->
 	<script>
-		var rightElement = document.getElementById('right_bar');
-		var myOptions = null;
-		var rightHammer = new Hammer(rightElement, myOptions);
-
-		var leftElement = document.getElementById('left_bar');
-		var leftHammer = new Hammer(leftElement, myOptions);
-
-		var bookElements = document.getElementsByClassName('book_img'); // Might not need to worry about generalizing this for the prototype
-		var bookHammer = new Hammer(bookElements[0], myOptions);
-
-		gestures(rightHammer, leftHammer, bookHammer);
+		gestures();
 	</script>
 
 </html>
