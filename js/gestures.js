@@ -52,6 +52,10 @@ function gestures() {
 	var highlightHammer = new Hammer(document.getElementById('highlighter'), myOptions);
 	highlightHammer.on('tap', function(ev) {toggle_highlight(); });
 
+	// tap the settings icons
+	var settingsHammer = new Hammer(document.getElementById('settings_button'), myOptions);
+	settingsHammer.on('tap', function(ev) {toggle_settings(); });
+
 	// tap a bookmark preview
 	//getElementsByClass doesn't agree with Hammer.js
 	var markPreview1Hammer = new Hammer(document.getElementById('bookmark1'), myOptions);
@@ -110,6 +114,8 @@ function open_book() {
 	document.getElementById('book_page').style.visibility = "visible";
 	document.getElementById('right_bar').style.visibility = "visible";
 	document.getElementById('left_bar').style.visibility = "visible";
+	document.getElementById('settings_page').style.visibility = "hidden";
+	document.getElementById('bookmarks_bar').style.visibility = "visible";
 	document.getElementById('bookmarks_bar').style.opacity = "1";
 	document.getElementById('header_title').innerHTML = "Sample Book";
 	document.getElementById('page_number').innerHTML = curr_page;
@@ -124,6 +130,7 @@ function go_to_home() {
 	document.getElementById('bookmarks_bar').style.opacity = "0";
 	document.getElementById('right_bar').style.visibility = "hidden";
 	document.getElementById('left_bar').style.visibility = "hidden";
+	document.getElementById('settings_page').style.visibility = "hidden";
 	document.getElementById('header_title').innerHTML = "e(njoyable)Textbooks";
 }
 
@@ -223,4 +230,19 @@ function tap_bookmark_preview(page_num) {
 	bookmark_on(1);
 	curr_page = page_num;
 	document.getElementById('page_number').innerHTML = curr_page;
+}
+
+var settings = 0;
+function toggle_settings() {
+	if (settings == 0) {
+		document.getElementById('main_page').style.visibility = "hidden";
+		document.getElementById('book_page').style.visibility = "hidden";
+		document.getElementById('right_bar').style.visibility = "hidden";
+		document.getElementById('left_bar').style.visibility = "hidden";
+		document.getElementById('bookmarks_bar').style.visibility = "hidden";
+		document.getElementById('settings_page').style.visibility = "visible";
+	}
+	else if (settings == 1) {
+		// return to previous page, either book or home screen
+	}
 }

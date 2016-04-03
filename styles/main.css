@@ -250,6 +250,10 @@
   width: 5%;
 }
 
+#settings_page {
+  visibility: hidden;
+}
+
 #book_page {
   visibility: hidden;
   position: absolute;
