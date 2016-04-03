@@ -49,6 +49,7 @@ function gestures() {
 	var bookmarksHammer = new Hammer(document.getElementById('bookmarks_bar'), myOptions);
 	bookmarksHammer.get('swipe').set({ direction: Hammer.DIRECTION_VERTICAL });
 	bookmarksHammer.on('swipeup', function(ev) { expand_bookmarks_bar(); });
+	bookmarksHammer.on('swipedown', function(ev) { contract_bookmarks_bar(); });
 }
 
 function advance_page() {
@@ -65,9 +66,9 @@ function open_book() {
 	console.log('open Book');
 	document.getElementById('main_page').style.visibility = "hidden";
 	document.getElementById('book_page').style.visibility = "visible";
-	document.getElementById('bookmarks_bar').style.visibility = "visible";
 	document.getElementById('right_bar').style.visibility = "visible";
 	document.getElementById('left_bar').style.visibility = "visible";
+	document.getElementById('bookmarks_bar').style.visibility = "visible";
 	document.getElementById('header_title').innerHTML = "Sample Book";
 }
 
@@ -83,7 +84,21 @@ function go_to_home() {
 	document.getElementById('header_title').innerHTML = "e(njoyable)Textbooks";
 }
 
+var bookmark_bar_expanded = 0;
+
 function expand_bookmarks_bar() {
-	console.log('expanding bookmarks bar upward');
-	document.getElementById('bookmarks_bar').style.backgroundColor = "yellow";
+	if (bookmark_bar_expanded == 0) {
+		console.log('expanding bookmarks bar upward');
+		var bar = document.getElementById('bookmarks_bar').get
+		$('#bookmarks_bar').animate({height: '+=10%'}, 300);
+		bookmark_bar_expanded = 1;
+	}
+}
+
+function contract_bookmarks_bar() {
+	if (bookmark_bar_expanded == 1) {
+		console.log('contracting bookmarks bar back to small size');
+		$('#bookmarks_bar').animate({height: '-=10%'}, 300);
+		bookmark_bar_expanded = 0;
+	}
 }
