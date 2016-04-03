@@ -200,6 +200,7 @@ function bookmark_on(yes) {
 function tap_bookmark_preview(page_num) {
 	console.log('preview tapped');
 	contract_bookmarks_bar();
+	bookmarks_arr[curr_page-1] = 1;
 	bookmark_on(1);
 	curr_page = page_num;
 	document.getElementById('page_number').innerHTML = curr_page;

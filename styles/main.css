@@ -17,7 +17,7 @@
    left: 11.5%;
    width: 77.5%;
    height: 80.8%;
-   background-color: lightblue;
+   /*background-color: lightblue;*/
 }
 
 #main_page {
@@ -29,7 +29,7 @@
 }
 
 #header_bar {
-  background-color:#F0F0FF;
+  background-color:#E8E8E8;
   height:10%;
   width:100%;
 }
@@ -268,15 +268,4 @@
   -ms-user-select: none;       /* IE/Edge */
   user-select: none;           /* non-prefixed version, currently
                                   not supported by any browser */
-}
-
-#test {
-   position: absolute;
-   top: 90%;
-   left: 90%;
-   width: 300px;
-   height: 300px;
-   margin-top: -250px; /* Half the height */
-   margin-left: -250px; /* Half the width */
-   background-color: lightblue;
 }
