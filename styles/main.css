@@ -122,11 +122,13 @@
 	text-align: center;
 	margin: 6px;
 	padding-top: 8px;
+  font-family: "Verdana", sans-serif;
 }
 
 .book_author {
 	text-align: center;
 	margin: 4px;
+  font-family: "Verdana", sans-serif;
 }
 
 #book0 {

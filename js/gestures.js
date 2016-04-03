@@ -199,7 +199,8 @@ function bookmark_on(yes) {
 
 function tap_bookmark_preview(page_num) {
 	console.log('preview tapped');
-	toggle_mark();
+	contract_bookmarks_bar();
+	bookmark_on(1);
 	curr_page = page_num;
 	document.getElementById('page_number').innerHTML = curr_page;
 }
