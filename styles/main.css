@@ -42,7 +42,14 @@
 }
 
 #search {
-	float: right;
+/*	float: right;  */
+}
+
+#search_div {
+  float: right;
+}
+
+#search_field {
 }
 
 .bookmarks_on_bar {
