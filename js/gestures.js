@@ -66,6 +66,9 @@ function gestures() {
 	markPreview3Hammer.on('tap', function(ev) {tap_bookmark_preview(3); });
 	var markPreview4Hammer = new Hammer(document.getElementById('bookmark4'), myOptions);
 	markPreview4Hammer.on('tap', function(ev) {tap_bookmark_preview(4); });
+	
+	var bookContentHammer = new Hammer(document.getElementById('book_content'), myOptions);
+	bookContentHammer.on('tap', function(ev) { toggle_icons_bookmarks_visibility();});
 }
 
 function advance_page() {
@@ -244,5 +247,40 @@ function toggle_settings() {
 	}
 	else if (settings == 1) {
 		// return to previous page, either book or home screen
+		document.getElementById('settings_page').style.visibility = "hidden";
+		// maybe need to do more
+	}
+}
+
+var icons_bookmarks = 1;
+function toggle_icons_bookmarks_visibility() {
+	if (icons_bookmarks == 1) {
+		// need to turn them off
+		console.log('turned off icon and bookmark visibility');
+		if (bookmark_bar_expanded == 1) {
+			$('#bookmarks_bar').animate({height: '-=15%'}, 300);
+		} else {
+			$('#bookmarks_bar').animate({height: '-=5%'}, 300);
+		}
+		var icons = document.getElementsByClassName('icons');
+		for (var i=0; i < icons.length; i++) {
+			icons[i].style.visibility = "hidden";
+		}
+		document.getElementById('search_field').style.visibility = "hidden";
+		icons_bookmarks = 0;
+	} else {
+		// turn them back on
+		console.log('turned on icon and bookmark visibility');
+		if (bookmark_bar_expanded == 1) {
+			$('#bookmarks_bar').animate({height: '+=15%'}, 300);
+		} else {
+			$('#bookmarks_bar').animate({height: '+=5%'}, 300);
+		}
+		var icons = document.getElementsByClassName('icons');
+		for (var i=0; i < icons.length; i++) {
+			icons[i].style.visibility = "visible";
+		}
+		document.getElementById('search_field').style.visibility = "visible";
+		icons_bookmarks = 1;
 	}
 }
