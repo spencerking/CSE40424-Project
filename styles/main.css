@@ -39,8 +39,19 @@
 	height: auto;	
 	display: block;
 	margin: auto;
-	margin-top: 40px;
+	margin-top: 30px;
 	
+}
+
+.book_title {
+	text-align: center;
+	margin: 6px;
+	padding-top: 8px;
+}
+
+.book_author {
+	text-align: center;
+	margin: 4px;
 }
 
 #book0 {
