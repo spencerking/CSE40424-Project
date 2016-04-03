@@ -47,6 +47,10 @@ function gestures() {
 	// tap the bookmark icon
 	var markHammer = new Hammer(document.getElementById('bookmark'), myOptions);
 	markHammer.on('tap', function(ev) {toggle_mark(); });
+	
+	// tap the highlight icon
+	var highlightHammer = new Hammer(document.getElementById('highlighter'), myOptions);
+	highlightHammer.on('tap', function(ev) {toggle_highlight(); });
 
 	// tap a bookmark preview
 	//getElementsByClass doesn't agree with Hammer.js
@@ -183,6 +187,7 @@ function toggle_mark() {
 	}
 }
 
+
 // changes css to turn bookmark on if yes == 1 or off if yes == 0
 function bookmark_on(yes) {
 	if (yes) {
@@ -195,6 +200,20 @@ function bookmark_on(yes) {
 		var str = "bookmark" + curr_page;
 		document.getElementById(str).style.visibility = "hidden";
 	}
+}
+
+var highlight_on = 0;
+function toggle_highlight() {
+	if (highlight_on == 0) {
+		console.log('turning on highligher tool');
+		highlight_on = 1;
+		document.getElementById('highlighter').src = 'images/activated_notes.png';
+	} else {
+		console.log('turning off highlighter tool');
+		highlight_on = 0;
+		document.getElementById('highlighter').src = 'images/notes.png';
+	}
+	
 }
 
 function tap_bookmark_preview(page_num) {
