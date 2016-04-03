@@ -70,7 +70,7 @@
   position: relative;
   top: 10%;
   left: 10%;
-  max-width: 20px;
+  width: 20px;
   height: 100%;
   background: url('../images/bookmark_preview.png') no-repeat;
   background-size:contain;
@@ -78,14 +78,35 @@
 
 #bookmark2 {
   visibility: hidden;
+  position: relative;
+  top: 10%;
+  left: 30%;
+  width: 20px;
+  height: 100%;
+  background: url('../images/bookmark_preview.png') no-repeat;
+  background-size:contain;
 }
 
 #bookmark3 {
   visibility: hidden;
+  position: relative;
+  top: 10%;
+  left: 50%;
+  width: 20px;
+  height: 100%;
+  background: url('../images/bookmark_preview.png') no-repeat;
+  background-size:contain;
 }
 
 #bookmark4 {
   visibility: hidden;
+  position: relative;
+  top: 10%;
+  left: 70%;
+  width: 20px;
+  height: 100%;
+  background: url('../images/bookmark_preview.png') no-repeat;
+  background-size:contain;
 }
 
 .book_img {

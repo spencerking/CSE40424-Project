@@ -108,7 +108,6 @@ function back_a_page() {
 
 function open_book() {
 	console.log('open Book');
-	curr_page = 1; // We will need to remember a book's current page at some point
 	if (bookmarks_arr[curr_page-1] == 1) {
 		bookmark_on(1);
 	} else {
@@ -142,7 +141,21 @@ function expand_bookmarks_bar() {
 		console.log('expanding bookmarks bar upward');
 		var bar = document.getElementById('bookmarks_bar').get
 		$('#bookmarks_bar').animate({height: '+=10%'}, 300);
+		expand_bookmark_previews();
 		bookmark_bar_expanded = 1;
+	}
+}
+
+function expand_bookmark_previews() {
+	console.log('expand previews');
+	var i = 0;
+	while (i < max_pages) {
+		if (bookmarks_arr[i] == 1) {
+			var j = i + 1;
+			var str = 'bookmark' + j;
+			document.getElementById(str).style.width = "50px";
+		}
+		i++;
 	}
 }
 
@@ -154,6 +167,18 @@ function contract_bookmarks_bar() {
 	}
 }
 
+function contract_bookmark_previews() {
+	console.log('contract previews');
+	var i = 0;
+	while (i < max_pages) {
+		if (bookmarks_arr[i] == 1) {
+			var j = i + 1;
+			var str = 'bookmark' + j;
+			document.getElementById(str).style.width = "20px";
+		}
+		i++;
+	}
+}
 
 function toggle_mark() {
 	if (bookmarks_arr[curr_page-1] == 0) {
