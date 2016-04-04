@@ -185,6 +185,7 @@
 #header_title {
   text-align: center;
   font-family: "Verdana", sans-serif;
+  font-size: 24px;
 }
 
 #home_button {
@@ -206,21 +207,21 @@
  }
 
 #home_button_div {
-	width: 33%;
+	width: 20%;
 	height: 100%;
 	float: left;
 	overflow: hidden;
 }
 
 #header_title_div {
-	width: 34%;
+	width: 60%;
 	height: 100%;
 	overflow: hidden;
 	display: inline-block;
 	}
  
 #settings_button_div {
-	width: 33%;
+	width: 20%;
 	height: 100%;
 	float: right;
 	overflow: hidden;
@@ -275,6 +276,7 @@
   margin: 16px;
   margin-bottom: 24px;
   font-family: "Verdana", sans-serif;
+  font-size: 16px;
 }
 
 #page_number {
