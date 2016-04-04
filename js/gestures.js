@@ -129,11 +129,13 @@ function open_book() {
 	set_progress_indicator(curr_page);
 	document.getElementById('header_title').innerHTML = "Sample Book";
 	document.getElementById('page_number').innerHTML = curr_page;
-	var icons = document.getElementsByClassName('icons');
-	for (var i=0; i < icons.length; i++) {
-		icons[i].style.visibility = "visible";
+	if (icons_bookmarks == 1) {
+		var icons = document.getElementsByClassName('icons');
+		for (var i=0; i < icons.length; i++) {
+			icons[i].style.visibility = "visible";
+		}
+		document.getElementById('search_field').style.visibility = "visible";		
 	}
-	document.getElementById('search_field').style.visibility = "visible";
 }
 
 function set_progress_indicator(curr_page) {
