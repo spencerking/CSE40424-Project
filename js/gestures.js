@@ -85,6 +85,7 @@ function advance_page() {
 		} else {
 			bookmark_on(0);
 		}
+		set_progress_indicator(curr_page);
 		console.log('curr_page is ' + curr_page);
 	}
 }
@@ -104,6 +105,7 @@ function back_a_page() {
 		} else {
 			bookmark_on(0);
 		}
+		set_progress_indicator(curr_page);
 		console.log('curr_page is ' + curr_page);
 	}	
 }
@@ -124,6 +126,7 @@ function open_book() {
 	document.getElementById('settings_page').style.visibility = "hidden";
 	document.getElementById('bookmarks_bar').style.visibility = "visible";
 	document.getElementById('bookmarks_bar').style.opacity = "1";
+	set_progress_indicator(curr_page);
 	document.getElementById('header_title').innerHTML = "Sample Book";
 	document.getElementById('page_number').innerHTML = curr_page;
 	var icons = document.getElementsByClassName('icons');
@@ -131,6 +134,16 @@ function open_book() {
 		icons[i].style.visibility = "visible";
 	}
 	document.getElementById('search_field').style.visibility = "visible";
+}
+
+function set_progress_indicator(curr_page) {
+	for (var i = 1; i <= 4; i++) {
+		var progress_id = 'progress_indicator' + i;
+		document.getElementById(progress_id).style.visibility = "hidden";
+	}
+	var progress_id = 'progress_indicator' + curr_page;
+	document.getElementById(progress_id).style.visibility = "visible";
+	
 }
 
 function go_to_home() {
@@ -198,7 +211,6 @@ function contract_bookmark_previews() {
 			var y = i*20+10;
 			document.getElementById(str).style.width = "20px";
 			document.getElementById(str).style.left = y + '%';
-
 		}
 		i++;
 	}
@@ -252,11 +264,16 @@ function toggle_highlight() {
 
 function tap_bookmark_preview(page_num) {
 	console.log('preview tapped');
-	contract_bookmarks_bar();
+	//contract_bookmarks_bar();
 	bookmarks_arr[curr_page-1] = 1;
 	bookmark_on(1);
+	if (bookmark_bar_expanded == 1){
+		expand_bookmark_previews();
+	}
 	curr_page = page_num;
 	document.getElementById('page_number').innerHTML = curr_page;
+	document.getElementById('page_variance').innerHTML = 'This is page ' + curr_page + '.';
+	set_progress_indicator(curr_page);
 }
 
 var settings = 0;

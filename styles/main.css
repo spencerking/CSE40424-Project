@@ -52,10 +52,6 @@
 #search_field {
 }
 
-.bookmarks_on_bar {
-
-}
-
 .book_content_on_bar {
   margin: 10px;
   font-family: "Verdana", sans-serif;
@@ -127,6 +123,17 @@
   margin: 0px;
   float: left;
 }
+
+.progress_indicator {
+	visibility: hidden;
+	position: relative;
+	width: 5px;
+	background-color: red;
+	height: 80%;
+	left: 40%;
+	top: 0;
+}
+
 
 .book_img {
 	width: 100px;
