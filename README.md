@@ -7,7 +7,7 @@ The design project for CSE40424 Human Computer Interaction at the University of 
     * [Book Screen](#book screen)
     * [Settings Screen](#settings screen)
     * [Icons](#icons)
-        * [Home Icon](#home icon)
+        * [Home Icon](#home-icon)
         * [Settings Icon](#settings icon)
         * [Bookmark Icon](#bookmark icon)
         * [Highlighter Icon](#highlighter icon)
