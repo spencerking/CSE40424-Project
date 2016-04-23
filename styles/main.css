@@ -69,7 +69,8 @@
 }
 
 #bookmark1 {
-  visibility: hidden;
+/*  visibility: hidden;*/
+  display: none;
   position: relative;
   top: 10%;
   left: 10%;
@@ -83,7 +84,8 @@
 }
 
 #bookmark2 {
-  visibility: hidden;
+/*  visibility: hidden;*/
+  display: none;
   position: relative;
   top: 10%;
   left: 30%;
@@ -97,7 +99,8 @@
 }
 
 #bookmark3 {
-  visibility: hidden;
+/*  visibility: hidden;*/
+  display: none;
   position: relative;
   top: 10%;
   left: 50%;
@@ -111,7 +114,8 @@
 }
 
 #bookmark4 {
-  visibility: hidden;
+/*  visibility: hidden;*/
+  display: none;
   position: relative;
   top: 10%;
   left: 70%;

@@ -246,12 +246,15 @@ function bookmark_on(yes) {
 	if (yes) {
 		document.getElementById('bookmark').src = 'images/bookmark_full.png';
 		var str = "bookmark" + curr_page;
-		document.getElementById(str).style.visibility = "visible";
+		// document.getElementById(str).style.visibility = "visible";
+		document.getElementById(str).style.display = "inline";
 	}
 	else {
 		document.getElementById('bookmark').src = 'images/bookmark.png';
 		var str = "bookmark" + curr_page;
-		document.getElementById(str).style.visibility = "hidden";
+		// document.getElementById(str).style.visibility = "hidden";
+		document.getElementById(str).style.display = "none";
+
 	}
 }
 
