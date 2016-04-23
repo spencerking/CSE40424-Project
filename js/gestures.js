@@ -56,6 +56,10 @@ function gestures() {
 	var settingsHammer = new Hammer(document.getElementById('settings_button'), myOptions);
 	settingsHammer.on('tap', function(ev) { toggle_settings(); });
 
+	// tap the search icon
+	var searchHammer = new Hammer(document.getElementById('search'), myOptions);
+	searchHammer.on('tap', function(ev) { highlightSearch(); });
+
 	// tap a bookmark preview
 	//getElementsByClass doesn't agree with Hammer.js
 	var markPreview1Hammer = new Hammer(document.getElementById('bookmark1'), myOptions);
@@ -353,4 +357,17 @@ function drag_progress_right() {
 
 function drag_progress_left() {
 	console.log('drag left');
+}
+
+// Courtesy of http://jsfiddle.net/FutureWebDev/HfS7e/
+function highlightSearch() {
+	console.log("search");
+    var text = document.getElementById("search_field").value;
+    var query = new RegExp("(\\b" + text + "\\b)", "gim");
+    var e = document.getElementById("book_content").innerHTML;
+    var enew = e.replace(/(<span>|<\/span>)/igm, "");
+    document.getElementById("book_content").innerHTML = enew;
+    var newe = enew.replace(query, "<span>$1</span>");
+    document.getElementById("book_content").innerHTML = newe;
+
 }

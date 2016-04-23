@@ -284,6 +284,11 @@
   font-size: 16px;
 }
 
+#book_content span {
+  background-color:#FF9;
+  color:#555;
+}
+
 .p_content {
 	display: none;
 }
@@ -319,4 +324,4 @@
 .verse
 {
   text-align: center;
-}
+}
