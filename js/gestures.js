@@ -1,5 +1,5 @@
 var curr_page = 1;
-var max_pages = 6;
+var max_pages = 20;
 
 // http://stackoverflow.com/questions/1295584/most-efficient-way-to-create-a-zero-filled-javascript-array
 function makeArrayOf(value, length) {
