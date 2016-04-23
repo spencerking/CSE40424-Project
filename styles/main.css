@@ -284,11 +284,21 @@
   font-size: 16px;
 }
 
-#page_number {
-	float: bottom;
-	text-align: center;
-  font-family: "Georgia", serif;
+.p_content {
+	display: none;
 }
+
+#p1_content {
+	display: block;
+}
+
+#page_number {
+  text-align: center;
+  font-family: "Georgia", serif;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  }
 
 /* This prevents the user from highlighting any part of the page */
 #main {
@@ -300,3 +310,8 @@
   user-select: none;           /* non-prefixed version, currently
                                   not supported by any browser */
 }
+
+.verse
+{
+  text-align: center;
+}

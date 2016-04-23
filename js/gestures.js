@@ -83,15 +83,7 @@ function advance_page() {
 	}
 	else {
 		curr_page++;
-		document.getElementById('page_number').innerHTML = curr_page;
-		document.getElementById('page_variance').innerHTML = 'This is page ' + curr_page + '.';
-		if (bookmarks_arr[curr_page-1] == 1) {
-			bookmark_on(1);
-		} else {
-			bookmark_on(0);
-		}
-		set_progress_indicator(curr_page);
-		console.log('curr_page is ' + curr_page);
+		update_page();
 	}
 }
 
@@ -103,16 +95,27 @@ function back_a_page() {
 	}
 	else {
 		curr_page--;
-		document.getElementById('page_number').innerHTML = curr_page;
-		document.getElementById('page_variance').innerHTML = 'This is page ' + curr_page + '.';
-		if (bookmarks_arr[curr_page-1] == 1) {
-			bookmark_on(1);
-		} else {
-			bookmark_on(0);
-		}
-		set_progress_indicator(curr_page);
-		console.log('curr_page is ' + curr_page);
+		update_page();
 	}	
+}
+
+function update_page() {
+	document.getElementById('page_number').innerHTML = curr_page;
+	if (bookmarks_arr[curr_page-1] == 1) {
+		bookmark_on(1);
+	} else {
+		bookmark_on(0);
+	}
+	// make all pages invisible
+	var p_content = document.getElementsByClassName('p_content');
+	for (var i=0; i < p_content.length; i++) {
+		p_content[i].style.display = "none";
+	}
+	// make correct page show up
+	document.getElementById('p' + curr_page + '_content').style.display = "block";
+	
+	set_progress_indicator(curr_page);
+	console.log('curr_page is ' + curr_page);
 }
 
 function open_book() {
@@ -122,7 +125,6 @@ function open_book() {
 	} else {
 		bookmark_on(0);
 	}
-	document.getElementById('page_variance').innerHTML = 'This is page ' + curr_page + '.';
 
 	document.getElementById('main_page').style.visibility = "hidden";
 	document.getElementById('book_page').style.visibility = "visible";
@@ -282,7 +284,6 @@ function tap_bookmark_preview(page_num) {
 	}
 	curr_page = page_num;
 	document.getElementById('page_number').innerHTML = curr_page;
-	document.getElementById('page_variance').innerHTML = 'This is page ' + curr_page + '.';
 	set_progress_indicator(curr_page);
 }
 
