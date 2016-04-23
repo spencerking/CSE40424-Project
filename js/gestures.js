@@ -359,15 +359,20 @@ function drag_progress_left() {
 	console.log('drag left');
 }
 
-// Courtesy of http://jsfiddle.net/FutureWebDev/HfS7e/
+// Based on http://jsfiddle.net/FutureWebDev/HfS7e/
 function highlightSearch() {
 	console.log("search");
     var text = document.getElementById("search_field").value;
-    var query = new RegExp("(\\b" + text + "\\b)", "gim");
-    var e = document.getElementById("book_content").innerHTML;
-    var enew = e.replace(/(<span>|<\/span>)/igm, "");
-    document.getElementById("book_content").innerHTML = enew;
-    var newe = enew.replace(query, "<span>$1</span>");
-    document.getElementById("book_content").innerHTML = newe;
+    if (text == "class" || text == "id" || text == "p" || text == "div") {
+    	console.log("can't search for html tags");
+    }
+    else {
+    	var query = new RegExp("(\\b" + text + "\\b)", "gim");
+	    var e = document.getElementById("book_content").innerHTML;
+	    var enew = e.replace(/(<span>|<\/span>)/igm, "");
+	    document.getElementById("book_content").innerHTML = enew;
+	    var newe = enew.replace(query, "<span>$1</span>");
+	    document.getElementById("book_content").innerHTML = newe;
+    }
 
 }
