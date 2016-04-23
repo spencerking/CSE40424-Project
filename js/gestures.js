@@ -1,5 +1,5 @@
 var curr_page = 1;
-var max_pages = 4;
+var max_pages = 6;
 
 // http://stackoverflow.com/questions/1295584/most-efficient-way-to-create-a-zero-filled-javascript-array
 function makeArrayOf(value, length) {
@@ -134,7 +134,7 @@ function open_book() {
 	document.getElementById('bookmarks_bar').style.visibility = "visible";
 	document.getElementById('bookmarks_bar').style.opacity = "1";
 	set_progress_indicator(curr_page);
-	document.getElementById('header_title').innerHTML = "Sample Book";
+	document.getElementById('header_title').innerHTML = "Beyond Bedlam";
 	document.getElementById('page_number').innerHTML = curr_page;
 	if (icons_bookmarks == 1) {
 		var icons = document.getElementsByClassName('icons');
@@ -151,6 +151,8 @@ function set_progress_indicator(curr_page) {
 		document.getElementById(progress_id).style.visibility = "hidden";
 	}
 	var progress_id = 'progress_indicator' + curr_page;
+	// NOTE TEMPORARY SOLUTION
+	if (curr_page > 4) return;
 	document.getElementById(progress_id).style.visibility = "visible";
 	
 }
@@ -247,12 +249,15 @@ function toggle_mark() {
 function bookmark_on(yes) {
 	if (yes) {
 		document.getElementById('bookmark').src = 'images/bookmark_full.png';
+		// NOTE TEMPORARY SOLUTION
+		if (curr_page > 4) return;
 		var str = "bookmark" + curr_page;
 		// document.getElementById(str).style.visibility = "visible";
 		document.getElementById(str).style.display = "inline";
 	}
 	else {
 		document.getElementById('bookmark').src = 'images/bookmark.png';
+		if (curr_page > 4) return;
 		var str = "bookmark" + curr_page;
 		// document.getElementById(str).style.visibility = "hidden";
 		document.getElementById(str).style.display = "none";

@@ -288,6 +288,11 @@
 	display: none;
 }
 
+.p_content p {
+	margin-bottom: 16px;
+	padding: 0;
+}
+
 #p1_content {
 	display: block;
 }
