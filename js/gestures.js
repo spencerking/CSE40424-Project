@@ -46,29 +46,34 @@ function gestures() {
 
 	// tap the bookmark icon
 	var markHammer = new Hammer(document.getElementById('bookmark'), myOptions);
-	markHammer.on('tap', function(ev) {toggle_mark(); });
+	markHammer.on('tap', function(ev) { toggle_mark(); });
 	
 	// tap the highlight icon
 	var highlightHammer = new Hammer(document.getElementById('highlighter'), myOptions);
-	highlightHammer.on('tap', function(ev) {toggle_highlight(); });
+	highlightHammer.on('tap', function(ev) { toggle_highlight(); });
 
 	// tap the settings icons
 	var settingsHammer = new Hammer(document.getElementById('settings_button'), myOptions);
-	settingsHammer.on('tap', function(ev) {toggle_settings(); });
+	settingsHammer.on('tap', function(ev) { toggle_settings(); });
 
 	// tap a bookmark preview
 	//getElementsByClass doesn't agree with Hammer.js
 	var markPreview1Hammer = new Hammer(document.getElementById('bookmark1'), myOptions);
-	markPreview1Hammer.on('tap', function(ev) {tap_bookmark_preview(1); });
+	markPreview1Hammer.on('tap', function(ev) { tap_bookmark_preview(1); } );
 	var markPreview2Hammer = new Hammer(document.getElementById('bookmark2'), myOptions);
-	markPreview2Hammer.on('tap', function(ev) {tap_bookmark_preview(2); });
+	markPreview2Hammer.on('tap', function(ev) { tap_bookmark_preview(2); } );
 	var markPreview3Hammer = new Hammer(document.getElementById('bookmark3'), myOptions);
-	markPreview3Hammer.on('tap', function(ev) {tap_bookmark_preview(3); });
+	markPreview3Hammer.on('tap', function(ev) { tap_bookmark_preview(3); } );
 	var markPreview4Hammer = new Hammer(document.getElementById('bookmark4'), myOptions);
-	markPreview4Hammer.on('tap', function(ev) {tap_bookmark_preview(4); });
+	markPreview4Hammer.on('tap', function(ev) { tap_bookmark_preview(4); } );
 	
 	var bookContentHammer = new Hammer(document.getElementById('book_content'), myOptions);
-	bookContentHammer.on('tap', function(ev) { toggle_icons_bookmarks_visibility();});
+	bookContentHammer.on('tap', function(ev) { toggle_icons_bookmarks_visibility(); });
+
+	var progressHammer = new Hammer(document.getElementById('progress_indicator1'), myOptions);
+	progressHammer.on('panright', function(ev) { drag_progress_right(); });
+
+	progressHammer.on('panleft', function(ev) { drag_progress_left(); });
 }
 
 function advance_page() {
@@ -331,4 +336,12 @@ function toggle_icons_bookmarks_visibility() {
 		document.getElementById('search_field').style.visibility = "visible";
 		icons_bookmarks = 1;
 	}
+}
+
+function drag_progress_right() {
+	console.log('drag right');
+}
+
+function drag_progress_left() {
+	console.log('drag left');
 }

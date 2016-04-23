@@ -51,7 +51,7 @@ Tapping this icon will allow you to select an area of the screen to capture for 
 ![Camera Icon](/images/screenshot.png)
 
 #### Search Icon
-Tapping this icon will run a search for the entered term. 
+Tapping this icon will run a search for the entered term.
 ![Search Icon](/images/search.png)
 
 ## References
