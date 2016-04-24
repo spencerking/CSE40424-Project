@@ -48,7 +48,7 @@ function gestures() {
 	// tap the bookmark icon
 	var markHammer = new Hammer(document.getElementById('bookmark'), myOptions);
 	markHammer.on('tap', function(ev) { tap_mark(); });
-	markHammer.on('press', function(ev) { hold_mark();});
+	//markHammer.on('press', function(ev) { hold_mark();});
 	
 	// tap the highlight icon
 	var highlightHammer = new Hammer(document.getElementById('highlighter'), myOptions);
@@ -278,16 +278,19 @@ function tap_mark() {
 		}
 	}
 	else if (bookmarks_arr[curr_page-1] == 1) {
-	}
-}
-
-function hold_mark() {
-	if (bookmarks_arr[curr_page-1] == 1) {
 		console.log('unmarking a page');
 		bookmarks_arr[curr_page-1] = 0;
 		bookmark_on(0);
 	}
 }
+
+/*function hold_mark() {
+	if (bookmarks_arr[curr_page-1] == 1) {
+		console.log('unmarking a page');
+		bookmarks_arr[curr_page-1] = 0;
+		bookmark_on(0);
+	}
+}*/
 
 
 // changes css to turn bookmark on if yes == 1 or off if yes == 0
