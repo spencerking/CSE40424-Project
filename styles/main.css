@@ -57,12 +57,6 @@
 	margin-left: -4px;
 }
 
-#notebook_content {
-	height: 496px;
-	/* will put in a scroll bar if gets too big  */
-	overflow: auto;
-}
-
 #search {
 /*	float: right;  */
 }
@@ -375,7 +369,7 @@
   visibility: hidden;
   position:absolute;
   z-index:10;
-  height:35%;
+  height:30%;
   width: 35%;
   top: 9%;
   right: 3px;
@@ -401,6 +395,24 @@
   font-family: "Verdana", sans-serif;
   font-size: 21px;
   margin-top: 18px;
+}
+
+
+#notebook_content {
+	height: 496px;
+	/* will put in a scroll bar if gets too big  */
+	overflow: auto;
+}
+
+#notebook_text_input {
+	border: none;
+	outline:none;
+	width: 80%;
+	margin-left: 24px;
+	margin-right: 24px;
+	text-align: left;
+	height: auto;
+	padding: 12px;
 }
 
 #back_to_book {

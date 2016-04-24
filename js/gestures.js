@@ -118,6 +118,7 @@ function gestures() {
 	progressHammer.on('panleft', function(ev) { drag_progress_left(); });
 	
 	$("#book_content").mouseup(function(ev) { highlight_text();});
+	
 }
 
 function advance_page() {
@@ -464,5 +465,7 @@ function highlightSearch() {
 function take_screenshot() {
 	var notebook = document.getElementById("notebook_content");
 	notebook.innerHTML += "<br/><img class='screenshot' style='width:200px;border:1px solid;' src='images/bedlam_pg" + curr_page + ".png' />";
+	// very messy, but this is the only way I could get the css to be applied correctly
+	notebook.innerHTML += "<div contenteditable style='border: none;outline:none;width: 80%;margin-left: 24px;margin-right: 24px;text-align: left;height: auto;padding: 12px;'> </div>";
 	toggle_notebook();
 }
