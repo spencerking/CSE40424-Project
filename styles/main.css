@@ -386,6 +386,10 @@
   color:#555;
 }
 
+::selection {
+	background: yellow;
+}
+
 .p_content {
 	display: none;
 }
@@ -411,7 +415,7 @@
   width: 100%;
   }
 
-/* This prevents the user from highlighting any part of the page */
+  /* This prevents the user from highlighting any part of the page */
 #main {
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none;   /* Chrome/Safari/Opera */
@@ -421,4 +425,5 @@
   user-select: none;           /* non-prefixed version, currently
                                   not supported by any browser */
 }
+
 

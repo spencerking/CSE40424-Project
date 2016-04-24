@@ -37,7 +37,7 @@ function gestures() {
 	// return to home page
 	var homeHammer = new Hammer(document.getElementById('home_button'), myOptions);
 	homeHammer.on('tap', function(ev) { go_to_home(); });
-	
+
 	// expand bookmarks_bar on swiping updateCommands
 	var bookmarksHammer = new Hammer(document.getElementById('bookmarks_bar'), myOptions);
 	bookmarksHammer.get('swipe').set({ direction: Hammer.DIRECTION_VERTICAL });
@@ -79,6 +79,8 @@ function gestures() {
 	progressHammer.on('panright', function(ev) { drag_progress_right(); });
 
 	progressHammer.on('panleft', function(ev) { drag_progress_left(); });
+	
+	$("#book_content").mouseup(function(ev) { highlight_text();});
 }
 
 function advance_page() {
@@ -281,12 +283,20 @@ var highlight_on = 0;
 function toggle_highlight() {
 	if (highlight_on == 0) {
 		console.log('turning on highligher tool');
+		//highlight_text();
 		highlight_on = 1;
 		document.getElementById('highlighter').src = 'images/activated_notes.png';
+		
+		$("#book_content").css("-webkit-user-select","text");
+		//$("#book_content").css("-webkit-user-drag", "auto");
+		//$("#book_content").css("-webkit-tap-highlight-color", "yellow");
+		
 	} else {
 		console.log('turning off highlighter tool');
 		highlight_on = 0;
 		document.getElementById('highlighter').src = 'images/notes.png';
+		$("#book_content").css("-webkit-user-select","none");
+
 	}
 	
 }
@@ -347,6 +357,16 @@ function toggle_icons_bookmarks_visibility() {
 		}
 		document.getElementById('search_field').style.visibility = "visible";
 		icons_bookmarks = 1;
+	}
+}
+
+function highlight_text() {
+	if (highlight_on) {
+		var selection = window.getSelection();
+		var range = selection.getRangeAt(0);
+		var newNode = document.createElement("span");
+		newNode.setAttribute("style", "background-color: yellow;");
+		range.surroundContents(newNode);	
 	}
 }
 
