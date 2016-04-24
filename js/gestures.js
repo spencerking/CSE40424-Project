@@ -256,14 +256,14 @@ function bookmark_on(yes) {
 	if (yes) {
 		document.getElementById('bookmark').src = 'images/bookmark_full.png';
 		// NOTE TEMPORARY SOLUTION
-		if (curr_page > 4) return;
+		if (curr_page > 17) return;
 		var str = "bookmark" + curr_page;
 		// document.getElementById(str).style.visibility = "visible";
 		document.getElementById(str).style.display = "inline";
 	}
 	else {
 		document.getElementById('bookmark').src = 'images/bookmark.png';
-		if (curr_page > 4) return;
+		if (curr_page > 17) return;
 		var str = "bookmark" + curr_page;
 		// document.getElementById(str).style.visibility = "hidden";
 		document.getElementById(str).style.display = "none";

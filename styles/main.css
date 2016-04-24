@@ -69,40 +69,150 @@
 
 }
 
-#bookmark1, #bookmark2, #bookmark3, #bookmark4 {
-/*  visibility: hidden;*/
-  display: none;
+.bookmark_previews {
   position: relative;
   top: 10%;
   float: left;
   width: 20px;
   height: 100%;
-  background: url('../images/bookmark_preview.png') no-repeat;
-  background-size:contain;
   overflow: hidden;
   margin: 0px;
 }
 
 #bookmark1 {
-  left: 10%;
+  /*  visibility: hidden;*/
+  display: none;
+  left: 5.55%;
+  background: url('../images/bookmark_preview.png') no-repeat;
+  background-size:contain;
 }
 
 #bookmark2 {
 /*  visibility: hidden;*/
   display: none;
-  left: 30%;
+  left: 11.1%;
+  background: url('../images/bookmark_preview.png') no-repeat;
+  background-size:contain;
 }
 
 #bookmark3 {
 /*  visibility: hidden;*/
   display: none;
-  left: 50%;
+  left: 16.65%;
+  background: url('../images/bookmark_preview.png') no-repeat;
+  background-size:contain;
 }
 
 #bookmark4 {
 /*  visibility: hidden;*/
   display: none;
-  left: 70%;
+  left: 22.2%;
+  background: url('../images/bookmark_preview.png') no-repeat;
+  background-size:contain;
+}
+
+#bookmark5 {
+  /*  visibility: hidden;*/
+  display: none;
+  left: 27.75%;
+  background: url('../images/bookmark_preview.png') no-repeat;
+  background-size:contain;
+}
+
+#bookmark6 {
+  /*  visibility: hidden;*/
+  display: none;
+  left: 33.3%;
+  background: url('../images/bookmark_preview.png') no-repeat;
+  background-size:contain;
+}
+
+#bookmark7 {
+  /*  visibility: hidden;*/
+  display: none;
+  left: 38.85%;
+  background: url('../images/bookmark_preview.png') no-repeat;
+  background-size:contain;
+}
+
+#bookmark8 {
+  /*  visibility: hidden;*/
+  display: none;
+  left: 44.4%;
+  background: url('../images/bookmark_preview.png') no-repeat;
+  background-size:contain;
+}
+
+#bookmark9 {
+  /*  visibility: hidden;*/
+  display: none;
+  left: 49.95%;
+  background: url('../images/bookmark_preview.png') no-repeat;
+  background-size:contain;
+}
+
+#bookmark10 {
+  /*  visibility: hidden;*/
+  display: none;
+  left: 55.5%;
+  background: url('../images/bookmark_preview.png') no-repeat;
+  background-size:contain;
+}
+
+#bookmark11 {
+  /*  visibility: hidden;*/
+  display: none;
+  left: 61.05%;
+  background: url('../images/bookmark_preview.png') no-repeat;
+  background-size:contain;
+}
+
+#bookmark12 {
+  /*  visibility: hidden;*/
+  display: none;
+  left:  66.6%;
+  background: url('../images/bookmark_preview.png') no-repeat;
+  background-size:contain;
+}
+
+#bookmark13 {
+  /*  visibility: hidden;*/
+  display: none;
+  left: 72.15%;
+  background: url('../images/bookmark_preview.png') no-repeat;
+  background-size:contain;
+}
+
+#bookmark14 {
+  /*  visibility: hidden;*/
+  display: none;
+  left: 77.7%;
+  background: url('../images/bookmark_preview.png') no-repeat;
+  background-size:contain;
+}
+
+#bookmark15 {
+  /*  visibility: hidden;*/
+  display: none;
+  left: 83.25%;
+  background: url('../images/bookmark_preview.png') no-repeat;
+  background-size:contain;
+}
+
+#bookmark16 {
+  /*  visibility: hidden;*/
+  display: none;
+  left: 88.8%;
+  background: url('../images/bookmark_preview.png') no-repeat;
+  background-size:contain;
+}
+
+#bookmark17 {
+  /*  visibility: hidden;*/
+  display: none;
+  left: 94.35%;
+  background: url('../images/bookmark_preview.png') no-repeat;
+  background-size:contain;
 }
 
 .progress_indicator {
