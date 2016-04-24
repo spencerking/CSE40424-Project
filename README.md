@@ -60,3 +60,4 @@ Home and settings icons courtesy of https://openclipart.org/.
 <br />
 Bookmark, camera, pencil, and search icons courtesy of http://www.endlessicons.com/.
 Notebook icon courtesy of http://simpleicon.com
+Page turn sound effect courtesy of https://www.freesound.org.
