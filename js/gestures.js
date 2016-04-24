@@ -140,6 +140,9 @@ function back_a_page() {
 }
 
 function update_page() {
+	var audio = new Audio('sound/page_turn.wav');
+	audio.play();
+	
 	document.getElementById('page_number').innerHTML = curr_page;
 	if (bookmarks_arr[curr_page-1] == 1) {
 		bookmark_on(1);
