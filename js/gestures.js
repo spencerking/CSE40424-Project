@@ -299,22 +299,13 @@ function tap_bookmark_preview(page_num) {
 var settings = 0;
 function toggle_settings() {
 	if (settings == 0) {
-		document.getElementById('main_page').style.visibility = "hidden";
-		document.getElementById('book_page').style.visibility = "hidden";
-		document.getElementById('right_bar').style.visibility = "hidden";
-		document.getElementById('left_bar').style.visibility = "hidden";
-		document.getElementById('bookmarks_bar').style.visibility = "hidden";
 		document.getElementById('settings_page').style.visibility = "visible";
-		var icons = document.getElementsByClassName('icons');
-		for (var i=0; i < icons.length; i++) {
-			icons[i].style.visibility = "hidden";
-		}
-		document.getElementById('search_field').style.visibility = "hidden";
+		settings = 1;
 	}
 	else if (settings == 1) {
 		// return to previous page, either book or home screen
 		document.getElementById('settings_page').style.visibility = "hidden";
-		// maybe need to do more
+		settings = 0;
 	}
 }
 

@@ -32,7 +32,7 @@
 						</div>
 						<!--<p id="search_button">Search</p>-->
 					</div>
-
+			
 					<!-- main_page is home screen of the app, where book options reside -->
 					<div id="main_page">
 						<div id="book0">
@@ -55,6 +55,17 @@
 							<img class="book_img" id="add_book_button" src="images/add_book.png"/>
 						</div>
 					</div>
+					<div id="settings_page">
+						<span><b>Settings</b> </span><br/><br/>
+						<label for="tab-mode"> Tab Mode: </label>
+						 <input type="checkbox" name="tab-mode" value="tab-mode" id="tab-mode">
+						 <br><br>
+						<label for="font-size">Font size:</label>
+						<input type="range" data-popup-enabled="true" name="font-size" id="font-slider" value="12" min="0" max="36">
+						<br><br>
+						<label for="contrast">Contrast:</label>
+						<input type="range" data-popup-enabled="true" name="contrast" id="contrast-slider" value="50" min="0" max="100">
+					</div>		
 					
 					<!-- right/left_bars will have no content, just have gesture response -->
 					<div id="right_bar">
@@ -380,18 +391,7 @@
 					
 					<div id="search_page">
 					</div>
-					<div id="settings_page">
-						<label for="tab-mode"> Tab Mode: </label>
-						 <input type="checkbox" name="tab-mode" value="tab-mode" id="tab-mode">
-						 <br>
-						<label for="font-size">Font size:</label>
-						<input type="range" data-popup-enabled="true" name="font-size" id="font-slider" value="12" min="0" max="36">
-						<br>
-						<label for="contrast">Contrast:</label>
-						<input type="range" data-popup-enabled="true" name="contrast" id="contrast-slider" value="50" min="0" max="100">
-						<br>
-						<input type="submit" value="Save">
-					</div>
+
 				</div>
 			</div>
 		</div>

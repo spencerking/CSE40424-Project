@@ -23,6 +23,7 @@
 #main_page {
   visibility: visible;
   position: absolute;
+  z-index:0;
   bottom: 0; 
   height:90%;
   width:100%;
@@ -140,8 +141,8 @@
 
 
 .book_img {
-	width: 100px;
-	height: 148px;	
+	width: 95px;
+	height: 140px;	
 	display: block;
 	margin: auto;
 	margin-top: 25px;
@@ -265,7 +266,17 @@
 
 #settings_page {
   visibility: hidden;
+  position:absolute;
+  z-index:10;
+  height:35%;
+  width: 35%;
+  top: 9%;
+  right: 3px;
+  margin-right: 2px;
   font-family: "Verdana", sans-serif;
+  background-color: #FFFFFF;
+  border: 1px solid #AAAAAA;
+  text-align: center;
 }
 
 #book_page {
@@ -294,8 +305,12 @@
 }
 
 .p_content p {
-	margin-bottom: 18px;
+	margin-bottom: 16px;
 	padding: 0;
+}
+.verse
+{
+  text-align: center;
 }
 
 #p1_content {
@@ -321,7 +336,3 @@
                                   not supported by any browser */
 }
 
-.verse
-{
-  text-align: center;
-}
