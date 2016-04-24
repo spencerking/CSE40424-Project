@@ -448,7 +448,7 @@ function drag_progress_left() {
 function highlightSearch() {
 	console.log("search");
     var text = document.getElementById("search_field").value;
-    if (text == "class" || text == "id" || text == "p" || text == "div") {
+    if (text == "class" || text == "id" || text == "p" || text == "div" || text == "") {
     	console.log("can't search for html tags");
     }
     else {
