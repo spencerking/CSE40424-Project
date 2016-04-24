@@ -36,17 +36,24 @@
 }
 
 .icons {
-  width: 27px;
+  width: 25px;
   height: 25px;
   padding:5px;
   margin-top: 10px;
 }
 
+#camera {
+	width: 32px;
+}
 
 #bookmark {
   margin-left: 16px;
 }
 
+#highlighter {
+	margin-right: -4px;
+	margin-left: -4px;
+}
 
 #search {
 /*	float: right;  */
