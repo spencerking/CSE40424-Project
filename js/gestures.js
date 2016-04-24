@@ -257,17 +257,19 @@ function hold_mark() {
 
 // changes css to turn bookmark on if yes == 1 or off if yes == 0
 function bookmark_on(yes) {
+	// we could set a flag for which book is open to try and count bookmarks
+	// or we could just not worry about it
 	if (yes) {
 		document.getElementById('bookmark').src = 'images/bookmark_full.png';
 		// NOTE TEMPORARY SOLUTION
-		if (curr_page > 4) return;
+		if (curr_page > 17) return;
 		var str = "bookmark" + curr_page;
 		// document.getElementById(str).style.visibility = "visible";
 		document.getElementById(str).style.display = "inline";
 	}
 	else {
 		document.getElementById('bookmark').src = 'images/bookmark.png';
-		if (curr_page > 4) return;
+		if (curr_page > 17) return;
 		var str = "bookmark" + curr_page;
 		// document.getElementById(str).style.visibility = "hidden";
 		document.getElementById(str).style.display = "none";
