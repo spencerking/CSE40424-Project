@@ -82,7 +82,7 @@
   height: 100%;
   overflow: hidden;
   margin: 0px;
-  opacity: 0;
+  visibility: hidden;
 }
 
 #bookmark1 {

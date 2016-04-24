@@ -290,18 +290,18 @@ function bookmark_on(yes) {
 		// NOTE TEMPORARY SOLUTION
 		if (curr_page > max_pages) return;
 		var str = "bookmark" + curr_page;
-		// document.getElementById(str).style.visibility = "visible";
+		document.getElementById(str).style.visibility = "visible";
 		//document.getElementById(str).style.display = "inline";
-		document.getElementById(str).style.opacity = 100;
+		//document.getElementById(str).style.opacity = 100;
 		
 	}
 	else {
 		document.getElementById('bookmark').src = 'images/bookmark.png';
 		if (curr_page > max_pages) return;
 		var str = "bookmark" + curr_page;
-		// document.getElementById(str).style.visibility = "hidden";
+		document.getElementById(str).style.visibility = "hidden";
 		//document.getElementById(str).style.display = "none";
-		document.getElementById(str).style.opacity = 0;
+		//document.getElementById(str).style.opacity = 0;
 	}
 }
 
