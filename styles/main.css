@@ -37,9 +37,14 @@
 
 .icons {
   max-width: 500px;
-  height: 80px;
-  margin: -20px;
-  margin-bottom: -40px;
+  height: 25px;
+  padding:5px;
+  margin-top: 10px;
+}
+
+
+#bookmark {
+  margin-left: 16px;
 }
 
 
@@ -52,6 +57,9 @@
 }
 
 #search_field {
+  position: absolute;
+  top: 3%;
+  left: 50%;
 }
 
 .book_content_on_bar {
@@ -64,10 +72,6 @@
 .bookmark_preview {
   width: auto;
   height: auto;
-}
-
-#bookmark {
-
 }
 
 .bookmark_previews {
@@ -378,6 +382,7 @@
 
 #book_content {
   margin: 16px;
+  margin-top: -16px;
   margin-bottom: 24px;
   font-family: "Verdana", sans-serif;
   font-size: 16px;
