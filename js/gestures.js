@@ -46,7 +46,8 @@ function gestures() {
 
 	// tap the bookmark icon
 	var markHammer = new Hammer(document.getElementById('bookmark'), myOptions);
-	markHammer.on('tap', function(ev) { toggle_mark(); });
+	markHammer.on('tap', function(ev) { tap_mark(); });
+	markHammer.on('press', function(ev) { hold_mark();});
 	
 	// tap the highlight icon
 	var highlightHammer = new Hammer(document.getElementById('highlighter'), myOptions);
@@ -231,7 +232,7 @@ function contract_bookmark_previews() {
 	}
 }
 
-function toggle_mark() {
+function tap_mark() {
 	//contract_bookmarks_bar();
 	if (bookmarks_arr[curr_page-1] == 0) {
 		console.log('marking a page');
@@ -242,6 +243,11 @@ function toggle_mark() {
 		}
 	}
 	else if (bookmarks_arr[curr_page-1] == 1) {
+	}
+}
+
+function hold_mark() {
+	if (bookmarks_arr[curr_page-1] == 1) {
 		console.log('unmarking a page');
 		bookmarks_arr[curr_page-1] = 0;
 		bookmark_on(0);
