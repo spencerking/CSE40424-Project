@@ -39,10 +39,11 @@ function gestures() {
 	homeHammer.on('tap', function(ev) { go_to_home(); });
 
 	// expand bookmarks_bar on swiping updateCommands
-	var bookmarksHammer = new Hammer(document.getElementById('bookmarks_bar'), myOptions);
+	// NOTE: this commented out because the spacing of expanded bookmarks not figured out
+	/*var bookmarksHammer = new Hammer(document.getElementById('bookmarks_bar'), myOptions);
 	bookmarksHammer.get('swipe').set({ direction: Hammer.DIRECTION_VERTICAL });
 	bookmarksHammer.on('swipeup', function(ev) { expand_bookmarks_bar(); });
-	bookmarksHammer.on('swipedown', function(ev) { contract_bookmarks_bar(); });
+	bookmarksHammer.on('swipedown', function(ev) { contract_bookmarks_bar(); }); */
 
 	// tap the bookmark icon
 	var markHammer = new Hammer(document.getElementById('bookmark'), myOptions);
@@ -61,6 +62,10 @@ function gestures() {
 	var searchHammer = new Hammer(document.getElementById('search'), myOptions);
 	searchHammer.on('tap', function(ev) { highlightSearch(); });
 
+	// tap the notes page icon
+	var notesHammer = new Hammer(document.getElementById('notebook'), myOptions);
+	notesHammer.on('tap', function(ev) { toggle_notebook(); });
+	
 	// tap a bookmark preview
 	//getElementsByClass doesn't agree with Hammer.js
 	var markPreview1Hammer = new Hammer(document.getElementById('bookmark1'), myOptions);
@@ -103,7 +108,6 @@ function gestures() {
 
 	var progressHammer = new Hammer(document.getElementById('progress_indicator1'), myOptions);
 	progressHammer.on('panright', function(ev) { drag_progress_right(); });
-
 	progressHammer.on('panleft', function(ev) { drag_progress_left(); });
 	
 	$("#book_content").mouseup(function(ev) { highlight_text();});
@@ -169,7 +173,7 @@ function open_book() {
 	set_progress_indicator(curr_page);
 	document.getElementById('header_title').innerHTML = "Beyond Bedlam";
 	document.getElementById('page_number').innerHTML = curr_page;
-	if (icons_bookmarks == 1) {
+	if (icons_bookmarks_active == 1) {
 		var icons = document.getElementsByClassName('icons');
 		for (var i=0; i < icons.length; i++) {
 			icons[i].style.visibility = "visible";
@@ -204,6 +208,8 @@ function go_to_home() {
 		icons[i].style.visibility = "hidden";
 	}
 	document.getElementById('search_field').style.visibility = "hidden";
+	if (highlight_on) toggle_highlight();
+	if (notebook_active) toggle_notebook();
 }
 
 var bookmark_bar_expanded = 0;
@@ -341,23 +347,40 @@ function tap_bookmark_preview(page_num) {
 	set_progress_indicator(curr_page);
 }
 
-var settings = 0;
+var settings_active = 0;
 function toggle_settings() {
-	if (settings == 0) {
+	if (settings_active == 0) {
 		document.getElementById('settings_page').style.visibility = "visible";
-		settings = 1;
+		settings_active = 1;
 		if (highlight_on) toggle_highlight();
 	}
-	else if (settings == 1) {
+	else if (settings_active == 1) {
 		// return to previous page, either book or home screen
 		document.getElementById('settings_page').style.visibility = "hidden";
-		settings = 0;
+		settings_active = 0;
 	}
 }
 
-var icons_bookmarks = 1;
+var notebook_active = 0;
+function toggle_notebook() {
+	if (notebook_active) {
+//		document.getElementById('notebook_page').style.visibility = "visible";
+		document.getElementById('notebook').src = "images/notebook.png";
+		notebook_active = 0;
+		console.log('notebook closed');
+	}
+	else {
+		// return to the book
+//		document.getElementById('notebook_page').style.visibility = "hidden";
+		document.getElementById('notebook').src = "images/notebook_full.png";
+		notebook_active = 1;
+		console.log('notebook opened');
+	}
+}
+
+var icons_bookmarks_active = 1;
 function toggle_icons_bookmarks_visibility() {
-	if (icons_bookmarks == 1) {
+	if (icons_bookmarks_active == 1) {
 		// need to turn them off
 		console.log('turned off icon and bookmark visibility');
 		if (bookmark_bar_expanded == 1) {
@@ -370,7 +393,7 @@ function toggle_icons_bookmarks_visibility() {
 			icons[i].style.visibility = "hidden";
 		}
 		document.getElementById('search_field').style.visibility = "hidden";
-		icons_bookmarks = 0;
+		icons_bookmarks_active = 0;
 		if(highlight_on) toggle_highlight();
 	} else {
 		// turn them back on
@@ -385,7 +408,7 @@ function toggle_icons_bookmarks_visibility() {
 			icons[i].style.visibility = "visible";
 		}
 		document.getElementById('search_field').style.visibility = "visible";
-		icons_bookmarks = 1;
+		icons_bookmarks_active = 1;
 	}
 }
 
