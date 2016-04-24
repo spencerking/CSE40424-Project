@@ -251,6 +251,8 @@ function toggle_mark() {
 
 // changes css to turn bookmark on if yes == 1 or off if yes == 0
 function bookmark_on(yes) {
+	// we could set a flag for which book is open to try and count bookmarks
+	// or we could just not worry about it
 	if (yes) {
 		document.getElementById('bookmark').src = 'images/bookmark_full.png';
 		// NOTE TEMPORARY SOLUTION
