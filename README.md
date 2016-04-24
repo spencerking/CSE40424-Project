@@ -59,3 +59,4 @@ Onscreen keyboard courtesy of https://github.com/Mottie/Keyboard.
 Home and settings icons courtesy of https://openclipart.org/.
 <br />
 Bookmark, camera, pencil, and search icons courtesy of http://www.endlessicons.com/.
+Notebook icon courtesy of http://simpleicon.com
