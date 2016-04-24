@@ -319,6 +319,7 @@ function toggle_settings() {
 	if (settings == 0) {
 		document.getElementById('settings_page').style.visibility = "visible";
 		settings = 1;
+		if (highlight_on) toggle_highlight();
 	}
 	else if (settings == 1) {
 		// return to previous page, either book or home screen
@@ -343,6 +344,7 @@ function toggle_icons_bookmarks_visibility() {
 		}
 		document.getElementById('search_field').style.visibility = "hidden";
 		icons_bookmarks = 0;
+		if(highlight_on) toggle_highlight();
 	} else {
 		// turn them back on
 		console.log('turned on icon and bookmark visibility');
