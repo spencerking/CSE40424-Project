@@ -78,11 +78,12 @@
   height: 100%;
   overflow: hidden;
   margin: 0px;
+  opacity: 0;
 }
 
 #bookmark1 {
   /*  visibility: hidden;*/
-  display: none;
+  display: inline;
   left: 1.55%;
   background: url('../images/bookmark_preview.png') no-repeat;
   background-size:contain;
@@ -90,7 +91,7 @@
 
 #bookmark2 {
 /*  visibility: hidden;*/
-  display: none;
+  display: inline;
   left: 2.1%;
   background: url('../images/bookmark_preview.png') no-repeat;
   background-size:contain;
@@ -98,7 +99,7 @@
 
 #bookmark3 {
 /*  visibility: hidden;*/
-  display: none;
+  display: inline;
   left: 2.65%;
   background: url('../images/bookmark_preview.png') no-repeat;
   background-size:contain;
@@ -106,7 +107,7 @@
 
 #bookmark4 {
 /*  visibility: hidden;*/
-  display: none;
+  display: inline;
   left: 3%;
   background: url('../images/bookmark_preview.png') no-repeat;
   background-size:contain;
@@ -114,7 +115,7 @@
 
 #bookmark5 {
   /*  visibility: hidden;*/
-  display: none;
+  display: inline;
   left: 4%;
   background: url('../images/bookmark_preview.png') no-repeat;
   background-size:contain;
@@ -122,7 +123,7 @@
 
 #bookmark6 {
   /*  visibility: hidden;*/
-  display: none;
+  display: inline;
   left: 5%;
   background: url('../images/bookmark_preview.png') no-repeat;
   background-size:contain;
@@ -130,7 +131,7 @@
 
 #bookmark7 {
   /*  visibility: hidden;*/
-  display: none;
+  display: inline;
   left: 7%;
   background: url('../images/bookmark_preview.png') no-repeat;
   background-size:contain;
@@ -138,7 +139,7 @@
 
 #bookmark8 {
   /*  visibility: hidden;*/
-  display: none;
+  display: inline;
   left: 9%;
   background: url('../images/bookmark_preview.png') no-repeat;
   background-size:contain;
@@ -146,7 +147,7 @@
 
 #bookmark9 {
   /*  visibility: hidden;*/
-  display: none;
+  display: inline;
   left: 11%;
   background: url('../images/bookmark_preview.png') no-repeat;
   background-size:contain;
@@ -154,7 +155,7 @@
 
 #bookmark10 {
   /*  visibility: hidden;*/
-  display: none;
+  display: inline;
   left: 13%;
   background: url('../images/bookmark_preview.png') no-repeat;
   background-size:contain;
@@ -162,7 +163,7 @@
 
 #bookmark11 {
   /*  visibility: hidden;*/
-  display: none;
+  display: inline;
   left: 15%;
   background: url('../images/bookmark_preview.png') no-repeat;
   background-size:contain;
@@ -170,7 +171,7 @@
 
 #bookmark12 {
   /*  visibility: hidden;*/
-  display: none;
+  display: inline;
   left: 17%;
   background: url('../images/bookmark_preview.png') no-repeat;
   background-size:contain;
@@ -178,7 +179,7 @@
 
 #bookmark13 {
   /*  visibility: hidden;*/
-  display: none;
+  display: inline;
   left: 19%;
   background: url('../images/bookmark_preview.png') no-repeat;
   background-size:contain;
@@ -186,7 +187,7 @@
 
 #bookmark14 {
   /*  visibility: hidden;*/
-  display: none;
+  display: inline;
   left: 21%;
   background: url('../images/bookmark_preview.png') no-repeat;
   background-size:contain;
@@ -194,7 +195,7 @@
 
 #bookmark15 {
   /*  visibility: hidden;*/
-  display: none;
+  display: inline;
   left: 23%;
   background: url('../images/bookmark_preview.png') no-repeat;
   background-size:contain;
@@ -202,7 +203,7 @@
 
 #bookmark16 {
   /*  visibility: hidden;*/
-  display: none;
+  display: inline;
   left: 25%;
   background: url('../images/bookmark_preview.png') no-repeat;
   background-size:contain;
@@ -210,7 +211,7 @@
 
 #bookmark17 {
   /*  visibility: hidden;*/
-  display: none;
+  display: inline;
   left: 27%;
   background: url('../images/bookmark_preview.png') no-repeat;
   background-size:contain;

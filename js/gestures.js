@@ -71,6 +71,32 @@ function gestures() {
 	markPreview3Hammer.on('tap', function(ev) { tap_bookmark_preview(3); } );
 	var markPreview4Hammer = new Hammer(document.getElementById('bookmark4'), myOptions);
 	markPreview4Hammer.on('tap', function(ev) { tap_bookmark_preview(4); } );
+	var markPreview5Hammer = new Hammer(document.getElementById('bookmark5'), myOptions);
+	markPreview5Hammer.on('tap', function(ev) { tap_bookmark_preview(5); } );
+	var markPreview6Hammer = new Hammer(document.getElementById('bookmark6'), myOptions);
+	markPreview6Hammer.on('tap', function(ev) { tap_bookmark_preview(6); } );
+	var markPreview7Hammer = new Hammer(document.getElementById('bookmark7'), myOptions);
+	markPreview7Hammer.on('tap', function(ev) { tap_bookmark_preview(7); } );
+	var markPreview8Hammer = new Hammer(document.getElementById('bookmark8'), myOptions);
+	markPreview8Hammer.on('tap', function(ev) { tap_bookmark_preview(8); } );
+	var markPreview9Hammer = new Hammer(document.getElementById('bookmark9'), myOptions);
+	markPreview9Hammer.on('tap', function(ev) { tap_bookmark_preview(9); } );
+	var markPreview10Hammer = new Hammer(document.getElementById('bookmark10'), myOptions);
+	markPreview10Hammer.on('tap', function(ev) { tap_bookmark_preview(10); } );
+	var markPreview11Hammer = new Hammer(document.getElementById('bookmark11'), myOptions);
+	markPreview11Hammer.on('tap', function(ev) { tap_bookmark_preview(11); } );
+	var markPreview12Hammer = new Hammer(document.getElementById('bookmark12'), myOptions);
+	markPreview12Hammer.on('tap', function(ev) { tap_bookmark_preview(12); } );
+	var markPreview13Hammer = new Hammer(document.getElementById('bookmark13'), myOptions);
+	markPreview13Hammer.on('tap', function(ev) { tap_bookmark_preview(13); } );
+	var markPreview14Hammer = new Hammer(document.getElementById('bookmark14'), myOptions);
+	markPreview14Hammer.on('tap', function(ev) { tap_bookmark_preview(14); } );
+	var markPreview15Hammer = new Hammer(document.getElementById('bookmark15'), myOptions);
+	markPreview15Hammer.on('tap', function(ev) { tap_bookmark_preview(15); } );
+	var markPreview16Hammer = new Hammer(document.getElementById('bookmark16'), myOptions);
+	markPreview16Hammer.on('tap', function(ev) { tap_bookmark_preview(16); } );
+	var markPreview17Hammer = new Hammer(document.getElementById('bookmark17'), myOptions);
+	markPreview17Hammer.on('tap', function(ev) { tap_bookmark_preview(17); } );
 	
 	var bookContentHammer = new Hammer(document.getElementById('book_content'), myOptions);
 	bookContentHammer.on('tap', function(ev) { toggle_icons_bookmarks_visibility(); });
@@ -153,15 +179,13 @@ function open_book() {
 }
 
 function set_progress_indicator(curr_page) {
-	for (var i = 1; i <= 4; i++) {
+	for (var i = 1; i <= max_pages; i++) {
 		var progress_id = 'progress_indicator' + i;
 		document.getElementById(progress_id).style.visibility = "hidden";
 	}
 	var progress_id = 'progress_indicator' + curr_page;
-	// NOTE TEMPORARY SOLUTION
-	if (curr_page > 4) return;
-	document.getElementById(progress_id).style.visibility = "visible";
-	
+	if (curr_page > max_pages) return;
+	document.getElementById(progress_id).style.visibility = "visible";	
 }
 
 function go_to_home() {
@@ -264,18 +288,20 @@ function bookmark_on(yes) {
 	if (yes) {
 		document.getElementById('bookmark').src = 'images/bookmark_full.png';
 		// NOTE TEMPORARY SOLUTION
-		if (curr_page > 17) return;
+		if (curr_page > max_pages) return;
 		var str = "bookmark" + curr_page;
 		// document.getElementById(str).style.visibility = "visible";
-		document.getElementById(str).style.display = "inline";
+		//document.getElementById(str).style.display = "inline";
+		document.getElementById(str).style.opacity = 100;
+		
 	}
 	else {
 		document.getElementById('bookmark').src = 'images/bookmark.png';
-		if (curr_page > 17) return;
+		if (curr_page > max_pages) return;
 		var str = "bookmark" + curr_page;
 		// document.getElementById(str).style.visibility = "hidden";
-		document.getElementById(str).style.display = "none";
-
+		//document.getElementById(str).style.display = "none";
+		document.getElementById(str).style.opacity = 0;
 	}
 }
 
@@ -311,6 +337,7 @@ function tap_bookmark_preview(page_num) {
 	}
 	curr_page = page_num;
 	document.getElementById('page_number').innerHTML = curr_page;
+	update_page();
 	set_progress_indicator(curr_page);
 }
 
