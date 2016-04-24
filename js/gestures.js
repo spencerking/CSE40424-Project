@@ -66,6 +66,9 @@ function gestures() {
 	var notesHammer = new Hammer(document.getElementById('notebook'), myOptions);
 	notesHammer.on('tap', function(ev) { toggle_notebook(); });
 	
+	var backToBookHammer = new Hammer(document.getElementById('back_to_book'), myOptions);
+	backToBookHammer.on('tap', function(ev) { toggle_notebook();});
+	
 	// tap a bookmark preview
 	//getElementsByClass doesn't agree with Hammer.js
 	var markPreview1Hammer = new Hammer(document.getElementById('bookmark1'), myOptions);
@@ -364,15 +367,15 @@ function toggle_settings() {
 var notebook_active = 0;
 function toggle_notebook() {
 	if (notebook_active) {
-//		document.getElementById('notebook_page').style.visibility = "visible";
-		document.getElementById('notebook').src = "images/notebook.png";
+		document.getElementById('notebook_page').style.visibility = "hidden";
+		document.getElementById('back_to_book').style.visibility = "hidden";
 		notebook_active = 0;
 		console.log('notebook closed');
 	}
 	else {
 		// return to the book
-//		document.getElementById('notebook_page').style.visibility = "hidden";
-		document.getElementById('notebook').src = "images/notebook_full.png";
+		document.getElementById('notebook_page').style.visibility = "visible";
+		document.getElementById('back_to_book').style.visibility = "visible";
 		notebook_active = 1;
 		console.log('notebook opened');
 	}
