@@ -65,9 +65,13 @@ function gestures() {
 	// tap the notes page icon
 	var notesHammer = new Hammer(document.getElementById('notebook'), myOptions);
 	notesHammer.on('tap', function(ev) { toggle_notebook(); });
-	
+	// tap the back button on the notes page
 	var backToBookHammer = new Hammer(document.getElementById('back_to_book'), myOptions);
 	backToBookHammer.on('tap', function(ev) { toggle_notebook();});
+	
+	// tap the screenshot icon
+	var screenshotHammer = new Hammer(document.getElementById('camera'), myOptions);
+	screenshotHammer.on('tap', function(ev) { take_screenshot(); });
 	
 	// tap a bookmark preview
 	//getElementsByClass doesn't agree with Hammer.js
@@ -452,4 +456,10 @@ function highlightSearch() {
 	    document.getElementById("book_content").innerHTML = newe;
     }
 
+}
+
+function take_screenshot() {
+	var notebook = document.getElementById("notebook_content");
+	notebook.innerHTML += "<br/><img class='screenshot' style='width:200px;border:1px solid;' src='images/bedlam_pg" + curr_page + ".png' />";
+	toggle_notebook();
 }

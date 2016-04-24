@@ -47,6 +47,7 @@
 	width: 32px;
 }
 
+
 #bookmark {
   margin-left: 16px;
 }
@@ -54,6 +55,12 @@
 #highlighter {
 	margin-right: -4px;
 	margin-left: -4px;
+}
+
+#notebook_content {
+	height: 496px;
+	/* will put in a scroll bar if gets too big  */
+	overflow: auto;
 }
 
 #search {
